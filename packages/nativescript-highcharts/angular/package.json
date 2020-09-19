@@ -1,0 +1,16 @@
+{
+	"name": "nativescript-highcharts-angular",
+	"ngPackage": {
+		"lib": {
+			"entryFile": "index.ts",
+			"umdModuleIds": {
+				"@nativescript/core": "ns-core",
+				"@nativescript/angular": "ns-angular",
+				"@mhtghn/nativescript-highcharts": "@mhtghn/nativescript-highcharts"
+			}
+		},
+		"whitelistedNonPeerDependencies": [
+			"."
+		]
+	}
+}
