@@ -1,8 +1,8 @@
 {
 	"name": "@mhtghn/nativescript-highcharts",
 	"version": "1.0.0",
-  "description": "This plugins allows you to use Highcharts in NativeScript.",
-	"main": "common",
+	"description": "This plugins allows you to use Highcharts in NativeScript.",
+	"main": "index",
 	"typings": "index.d.ts",
 	"nativescript": {
 		"platforms": {

@@ -103,6 +103,7 @@
 						"assets": [
 							"packages/nativescript-highcharts/*.md",
 							"packages/nativescript-highcharts/index.d.ts",
+							"packages/nativescript-highcharts/common.xml",
 							"LICENSE",
 							{
 								"glob": "**/*",
