@@ -59,5 +59,7 @@ export class DemoSharedNativescriptHighcharts extends DemoSharedBase {
       data: [3, 4, 4, 2, 5]
     }]
   };
-  chartOptionsString = JSON.stringify(this.chartOptions);
+  get chartOptionsString(): string {
+    return JSON.stringify(this.chartOptions);
+  }
 }
