@@ -15,7 +15,7 @@
 		"reflect-metadata": "file:../../node_modules/reflect-metadata",
 		"rxjs": "file:../../node_modules/rxjs",
 		"zone.js": "file:../../node_modules/zone.js",
-		"@mhtghn/nativescript-highcharts": "file:../../dist/packages/nativescript-highcharts"
+		"@ejaszke/nativescript-highcharts": "file:../../dist/packages/nativescript-highcharts"
 	},
 	"devDependencies": {
 		"@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",

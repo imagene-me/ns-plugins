@@ -1,6 +1,6 @@
 import { Observable, EventData, Page } from '@nativescript/core';
 import { DemoSharedNativescriptHighcharts } from '@demo/shared';
-import {} from '@mhtghn/nativescript-highcharts';
+import {} from '@ejaszke/nativescript-highcharts';
 
 export function navigatingTo(args: EventData) {
 	const page = <Page>args.object;

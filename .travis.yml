@@ -3,4 +3,4 @@ node_js:
   - "node"
 script:
 - npm run setup
-- npm start @mhtghn.build-all
+- npm start @ejaszke.build-all

@@ -3,7 +3,7 @@
 This plugins allows you to use Highcharts in NativeScript.
 
 ```javascript
-ns plugin add @mhtghn/nativescript-highcharts
+ns plugin add @ejaszke/nativescript-highcharts
 ```
 
 **Info:** This plugin works with NativeScript 7.0.0 and above. For older versions of NativeScript check this [repo](https://github.com/mhtghn/nativescript-ui-highcharts)

@@ -1,5 +1,5 @@
 {
-	"name": "@mhtghn/nativescript-highcharts",
+	"name": "@ejaszke/nativescript-highcharts",
 	"version": "1.0.2",
 	"description": "This plugins allows you to use Highcharts in NativeScript.",
 	"main": "index",

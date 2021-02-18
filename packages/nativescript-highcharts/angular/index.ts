@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { registerElement } from '@nativescript/angular';
-import { Highcharts } from '@mhtghn/nativescript-highcharts';
+import { Highcharts } from '@ejaszke/nativescript-highcharts';
 import { HighchartsDirective } from './highcharts.directive';
 
 @NgModule({

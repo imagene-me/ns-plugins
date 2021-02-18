@@ -1,7 +1,7 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptCommonModule, NativeScriptRouterModule } from '@nativescript/angular';
 import { NativescriptHighchartsComponent } from './nativescript-highcharts.component';
-import { HighchartsModule } from '@mhtghn/nativescript-highcharts/angular';
+import { HighchartsModule } from '@ejaszke/nativescript-highcharts/angular';
 
 @NgModule({
 	imports: [

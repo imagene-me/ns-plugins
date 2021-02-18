@@ -4,7 +4,7 @@
 		"types": ["node"],
 		"baseUrl": ".",
 		"paths": {
-			"@mhtghn/nativescript-highcharts": ["../../../dist/packages/nativescript-highcharts"]
+			"@ejaszke/nativescript-highcharts": ["../../../dist/packages/nativescript-highcharts"]
 		}
 	}
 }

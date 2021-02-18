@@ -1,5 +1,5 @@
 import { DemoSharedBase } from '../utils';
-import {} from '@mhtghn/nativescript-highcharts';
+import {} from '@ejaszke/nativescript-highcharts';
 
 export class DemoSharedNativescriptHighcharts extends DemoSharedBase {
   chartOptions = {

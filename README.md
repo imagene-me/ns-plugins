@@ -1,11 +1,13 @@
-# @mhtghn/\* plugins
+# This is fork from @mhtghn/nativescript-highcharts
+
+I only added function to update chart data dynamically
 
 ```
 npm run setup
 npm start
 ```
 
-- @mhtghn/nativescript-highcharts
+- @ejaszke/nativescript-highcharts
 
 # How to use?
 
