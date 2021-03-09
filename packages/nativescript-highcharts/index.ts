@@ -916,6 +916,8 @@ export class Highcharts extends FlexboxLayout {
 				webview.ios.backgroundColor = UIColor.clearColor;
 				webview.ios.opaque = false;
 			}
+
+      webview.opacity = 1;
 		});
 	}
 }
