@@ -1,6 +1,6 @@
 {
 	"name": "@ejaszke/nativescript-highcharts",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"description": "This plugins allows you to use Highcharts in NativeScript.",
 	"main": "index",
 	"typings": "index.d.ts",

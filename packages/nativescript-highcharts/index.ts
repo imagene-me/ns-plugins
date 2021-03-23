@@ -900,6 +900,10 @@ export class Highcharts extends FlexboxLayout {
 		this.addChild(innerComponent);
 	}
 
+	onTap(): void {
+		// to be implemented
+	}
+
 	onWebViewLoaded(webargs) {
 		const webview: WebView = <WebView>webargs.object;
 		webview.on(WebView.loadFinishedEvent, (args) => {
@@ -917,7 +921,7 @@ export class Highcharts extends FlexboxLayout {
 				webview.ios.opaque = false;
 			}
 
-      webview.opacity = 1;
+			webview.opacity = 1;
 		});
 	}
 }
