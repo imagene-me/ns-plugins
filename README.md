@@ -7,7 +7,7 @@ npm run setup
 npm start
 ```
 
-- @ejaszke/nativescript-highcharts
+- @imagene.me/nativescript-highcharts
 
 # How to use?
 

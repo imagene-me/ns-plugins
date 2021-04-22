@@ -57,17 +57,17 @@ module.exports = {
 			},
 		},
 		'⚙️': {
-			script: `npx cowsay "@ejaszke/* packages will keep your ⚙️ cranking"`,
-			description: '_____________  @ejaszke/*  _____________',
+			script: `npx cowsay "@imagene.me/* packages will keep your ⚙️ cranking"`,
+			description: '_____________  @imagene.me/*  _____________',
 		},
 		// packages
 		// build output is always in dist/packages
-		'@ejaszke': {
+		'@imagene.me': {
 			// @ejaszke/nativescript-highcharts
 			'nativescript-highcharts': {
 				build: {
 					script: 'nx run nativescript-highcharts:build.all',
-					description: '@ejaszke/nativescript-highcharts: Build',
+					description: '@imagene.me/nativescript-highcharts: Build',
 				},
 			},
 			'build-all': {
@@ -82,7 +82,7 @@ module.exports = {
 		focus: {
 			'nativescript-highcharts': {
 				script: 'nx run nativescript-highcharts:focus',
-				description: 'Focus on @ejaszke/nativescript-highcharts',
+				description: 'Focus on @imagene.me/nativescript-highcharts',
 			},
 			reset: {
 				script: 'nx run all:focus',
