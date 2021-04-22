@@ -1,6 +1,6 @@
 {
-	"name": "@ejaszke/nativescript-highcharts",
-	"version": "1.0.6",
+	"name": "@imagene.me/nativescript-highcharts",
+	"version": "1.0.7",
 	"description": "This plugins allows you to use Highcharts in NativeScript.",
 	"main": "index",
 	"typings": "index.d.ts",
@@ -12,7 +12,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ejaszke/ns-plugins.git"
+		"url": "https://github.com/imagene-me/ns-plugins.git"
 	},
 	"keywords": [
 		"NativeScript",
