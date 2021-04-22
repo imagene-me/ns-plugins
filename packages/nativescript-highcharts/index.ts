@@ -879,6 +879,11 @@ v[l]="undefined"===typeof q[l]?null:q[l]})}var n=this,v={};f(a,this.options,v,0)
             </script>
             <div id="container"></div>
             <script>
+            Highcharts.setOptions({
+              lang: {
+                decimalPoint: ','
+              }
+            });
             var charts = Highcharts.chart('container', ${value});
             function updateSeries(data) {
               charts.series[0].update({
