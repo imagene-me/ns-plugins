@@ -63,7 +63,7 @@ module.exports = {
 		// packages
 		// build output is always in dist/packages
 		'@imagene.me': {
-			// @ejaszke/nativescript-highcharts
+			// @imagene.me/nativescript-highcharts
 			'nativescript-highcharts': {
 				build: {
 					script: 'nx run nativescript-highcharts:build.all',

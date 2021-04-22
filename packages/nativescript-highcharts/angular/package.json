@@ -6,7 +6,7 @@
 			"umdModuleIds": {
 				"@nativescript/core": "ns-core",
 				"@nativescript/angular": "ns-angular",
-				"@ejaszke/nativescript-highcharts": "ns-highcharts-angular"
+				"@imagene.me/nativescript-highcharts": "ns-highcharts-angular"
 			}
 		},
 		"whitelistedNonPeerDependencies": [
