@@ -1,5 +1,5 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd">
-  <ActionBar title="NS Toast" color="#fff" backgroundColor="#5d80a0">
+  <ActionBar title="Imagene Nativescript Toast" color="#fff" backgroundColor="#5d80a0">
   </ActionBar>
   <ScrollView>
     <StackLayout>

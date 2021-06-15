@@ -1,5 +1,5 @@
 import { Color, Utils } from '@nativescript/core';
-import { ToastDuration, ToastVariant, ToastOptions, ToastVariantParams } from './toast.common';
+import { ToastDuration, ToastVariant, ToastOptions, ToastVariantParams, ToastColorMap } from './toast.common';
 
 export * from './toast.common';
 
@@ -81,14 +81,14 @@ export class Toasty {
       switch (value) {
         case ToastVariant.SUCCESS:
           this.setVariantTemplate({
-            backgroundColor: '#4e576b',
-            textColor: '#ffffff'
+            backgroundColor: ToastColorMap.SuccessBackground,
+            textColor: ToastColorMap.SuccessText
           });
           break;
         case ToastVariant.ERROR:
           this.setVariantTemplate({
-            backgroundColor: '#fef7f7',
-            textColor: '#e12a37'
+            backgroundColor: ToastColorMap.ErrorBackground,
+            textColor: ToastColorMap.ErrorText
           });
           break;
       }

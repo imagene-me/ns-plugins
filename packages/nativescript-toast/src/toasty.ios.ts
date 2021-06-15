@@ -1,5 +1,5 @@
 import { Color } from '@nativescript/core';
-import { ToastDuration, ToastOptions, ToastVariant, ToastVariantParams } from './toast.common';
+import { ToastDuration, ToastOptions, ToastVariant, ToastColorMap, ToastVariantParams } from './toast.common';
 
 export * from './toast.common';
 
@@ -77,9 +77,45 @@ export class Toasty {
     }
   }
 
+  setVariant(value: ToastVariant, customParams?: ToastVariantParams) {
+    if (customParams) {
+      this.setVariantTemplate(
+        {
+          backgroundColor: customParams.backgroundColor,
+          textColor: customParams.textColor
+        }
+      )
+
+      return this;
+    }
+
+    if (value) {
+      switch (value) {
+        case ToastVariant.SUCCESS:
+          this.setVariantTemplate({
+            backgroundColor: ToastColorMap.SuccessBackground,
+            textColor: ToastColorMap.SuccessText
+          });
+          break;
+        case ToastVariant.ERROR:
+          this.setVariantTemplate({
+            backgroundColor: ToastColorMap.ErrorBackground,
+            textColor: ToastColorMap.ErrorText
+          });
+          break;
+      }
+    }
+
+    return this;
+  }
+
+  private setVariantTemplate(params: ToastVariantParams) {
+    this.setTextColor(params.textColor);
+    this.setBackgroundColor(params.backgroundColor);
+  }
+
   setTextColor(value: Color | string) {
     if (value) {
-      this._textColor = value;
       // set the text color
       if (typeof value === 'string') {
         this._toastStyle.messageColor = new Color(value).ios;
@@ -96,7 +132,6 @@ export class Toasty {
 
   setBackgroundColor(value: Color | string) {
     if (value) {
-      this._backgroundColor = value;
       // set the text color
       if (typeof value === 'string') {
         this._toastStyle.backgroundColor = new Color(value).ios;
