@@ -1,7 +1,7 @@
 {
-  "name": "imagene-me-nativescript-toast",
+  "name": "imagene-nativescript-toast",
   "version": "1.0.0",
-  "description": "Imagene-me NativeScript toast plugin",
+  "description": "Imagene.me NativeScript toast plugin",
   "main": "imagene-me-nativescript-toast",
   "typings": "index.d.ts",
   "nativescript": {
