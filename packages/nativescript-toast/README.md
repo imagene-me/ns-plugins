@@ -1,27 +1,20 @@
-# Imagene-me nativescript-toasty based on nativescript-toasty
+# Imagene-me nativescript-toast based on nativescript-toasty
 
-![Build CI](https://github.com/triniwiz/nativescript-toasty/workflows/Build%20CI/badge.svg)
-[![npm](https://img.shields.io/npm/v/nativescript-toasty.svg)](https://www.npmjs.com/package/nativescript-toasty)
-[![npm](https://img.shields.io/npm/dt/nativescript-toasty.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-toasty)
+[![npm](https://img.shields.io/npm/v/nativescript-toasty.svg)](https://www.npmjs.com/package/nativescript-toast)
+[![npm](https://img.shields.io/npm/dt/nativescript-toasty.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-toast)
 
 ## Install
 
-### [NativeScript 7.0+](https://github.com/imagene-me/ns-plugins)
+### [NativeScript 7.0+](https://github.com/imagene-me/ns-plugins/tree/master/packages/nativescript-toast)
 
-`tns plugin add @imagene-me/nativescript-toasty`
-
-### NativeScript < 7.0
-
-`tns plugin add nativescript-toasty@1.0.0-alpha`
+`tns plugin add @imagene-me/nativescript-toast`
 
 ## Usage
 
 TypeScript
 
 ```js
-/* use package name "nativescript-toasty" for NS < 7.0 */
-import { Toasty } from "@imagene-me/nativescript-toasty"
-
+import { Toasty } from "@imagene-me/nativescript-toast"
 import { isIOS } from '@nativescript/core/platform';
 // Toasty accepts an object for customizing its behavior/appearance. The only REQUIRED value is `text` which is the message for the toast.
 const toast = new Toasty(
@@ -35,6 +28,7 @@ toast.show();
 // you can also chain the methods together and there's no need to create a reference to the Toasty instance with this approach
 new Toasty({ text: 'Some Message' })
   .setToastDuration(ToastDuration.LONG)
+  .setToastVariant(ToastVariant.ERROR)
   .show();
 
 // or you can set the properties of the Toasty instance
@@ -56,8 +50,7 @@ toasty.show();
 JavaScript
 
 ```js
-/* use package name "nativescript-toasty" for NS < 7.0 */
-var toasty = require('@imagene-me/nativescript-toasty').Toasty;
+var toasty = require('@imagene-me/nativescript-toast').Toasty;
 var toast = new toasty({ text: 'Toast message' });
 toast.show();
 ```
@@ -66,17 +59,35 @@ toast.show();
 
 ```typescript
 
-  constructor(opts: ToastyOptions);
+constructor(
+  opts: ToastyOptions
+);
 
-  position: ToastPosition;
+duration: ToastDuration;
 
-  duration: ToastDuration;
+variant: ToastVariant;
 
+customVariantParams: ToastVariantParams;
 
-  /**
-   * Show the Toasty
-   */
-  show();
+/**
+ * Show the Toasty
+ */
+show();
+
+/**
+ * Sets the Toast duration.
+ */
+setToastDuration(value: ToastDuration): Toasty;
+
+/**
+ * Sets the Toast variant.
+ */
+setToastVariant(value: ToastVariant): Toasty;
+
+/**
+ * Sets the Toast variant.
+ */
+setCustomVariantParams(value: ToastVariant): Toasty;
 
 ```
 

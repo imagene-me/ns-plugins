@@ -8,9 +8,6 @@ export declare class Toasty {
   variant: ToastVariant;
   customVariantParams: ToastVariantParams;
 
-  readonly width: number;
-  readonly height: number;
-
   /**
    * Shows the toast.
    */
@@ -49,12 +46,12 @@ export interface ToastyOptions {
   duration?: ToastDuration;
 
   /**
-   * TODO.
+   * Change Toast Variant - default SUCCESS
    */
   variant?: ToastVariant;
 
   /**
-   * TODO.
+   * Set specific background and text color
    */
   customVariantParams?: ToastVariantParams;
 
