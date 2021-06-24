@@ -1,0 +1,29 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"outDir": "../../dist/out-tsc",
+		"rootDir": ".",
+    "target": "es2015",
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "pretty": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noEmitHelpers": true,
+    "noEmitOnError": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true
+	},
+	"exclude": ["**/*.spec.ts", "angular"],
+	"include": ["**/*.ts", "references.d.ts"],
+  "compileOnSave": false
+}

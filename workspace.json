@@ -73,7 +73,7 @@
 					"builder": "@nrwl/workspace:run-commands",
 					"outputs": ["dist/packages"],
 					"options": {
-						"commands": ["nx run nativescript-highcharts:build.all"],
+						"commands": ["nx run nativescript-highcharts:build.all", "nx run nativescript-google-login:build.all"],
 						"parallel": false
 					}
 				},
@@ -126,6 +126,49 @@
 					"outputs": ["dist/packages"],
 					"options": {
 						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-highcharts"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-google-login": {
+			"root": "packages/nativescript-google-login",
+			"sourceRoot": "packages/nativescript-google-login",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-google-login",
+						"tsConfig": "packages/nativescript-google-login/tsconfig.json",
+						"packageJson": "packages/nativescript-google-login/package.json",
+						"main": "packages/nativescript-google-login/index.ts",
+						"assets": [
+							"packages/nativescript-google-login/*.md",
+							"packages/nativescript-google-login/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-google-login/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-google-login:build", "node tools/scripts/build-finish.ts nativescript-google-login"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-google-login"],
 						"parallel": false
 					}
 				}
