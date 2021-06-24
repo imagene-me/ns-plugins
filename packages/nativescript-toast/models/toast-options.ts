@@ -1,21 +1,8 @@
 import { Color } from '@nativescript/core';
 
-export enum ToastVariant {
-  'Success' = 'success',
-  'Error' = 'error',
-}
-
-export enum ToastDuration {
-  'Short' = 'short',
-  'Long' = 'long'
-}
-
-export enum ToastColorMap {
-  SuccessText = '#ffffff',
-  SuccessBackground = '#4e576b',
-  ErrorText = '#e12a37',
-  ErrorBackground = '#fef7f7',
-}
+import { ToastDuration } from '../enums/toast-duration';
+import { ToastVariant } from '../enums/toast-variant';
+import { ToastVariantParams } from '../models/variant-params';
 
 export interface ToastOptions {
   /**
@@ -67,9 +54,4 @@ export interface ToastOptions {
      */
     shadowColor?: Color | string;
   };
-}
-
-export interface ToastVariantParams {
-  backgroundColor: string;
-  textColor: string;
 }

@@ -30,11 +30,6 @@ const toasty = new Toasty({
     cornerRadius: 24,
   },
 });
-
-toasty.duration = ToastDuration.Short;
-toasty.textColor = '#fff';
-toasty.backgroundColor = new Color('purple');
-toasty.show();
 ```
 
 JavaScript
@@ -46,25 +41,6 @@ toast.show();
 ```
 
 ### API
-
-TypeScript
-
-```typescript
-constructor(
-  opts: ToastyOptions
-);
-
-duration: ToastDuration;
-
-variant: ToastVariant;
-
-customVariantParams: ToastVariantParams;
-
-/**
- * Show the Toasty
- */
-show();
-```
 
 ```typescript
 export enum ToastDuration {

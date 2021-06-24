@@ -1,7 +1,9 @@
 import { Color } from '@nativescript/core';
-import { ToastDuration, ToastOptions, ToastVariant, ToastColorMap, ToastVariantParams } from './toast.common';
-
-export * from './toast.common';
+import { ToastDuration } from './enums/toast-duration';
+import { ToastVariantParams } from './models/variant-params';
+import { ToastOptions } from './models/toast-options';
+import { ToastColorMap } from './enums/color-map';
+import { ToastVariant } from './enums/toast-variant';
 
 export class Toasty {
   private _text: string;

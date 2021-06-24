@@ -1,7 +1,9 @@
 import { Color, Utils } from '@nativescript/core';
-import { ToastDuration, ToastVariant, ToastOptions, ToastVariantParams, ToastColorMap } from './toast.common';
-
-export * from './toast.common';
+import { ToastDuration } from './enums/toast-duration';
+import { ToastVariant } from './enums/toast-variant';
+import { ToastVariantParams } from './models/variant-params';
+import { ToastOptions } from './models/toast-options';
+import { ToastColorMap } from './enums/color-map';
 
 export class Toasty {
   private _duration: ToastDuration;
@@ -40,22 +42,11 @@ export class Toasty {
 
     // set the values
     this.setToastDuration(this._duration)
+      .setVariant(this._variant, this._customVariantParams)
       .setToastPosition()
-      .setTextPosition()
-      .setVariant(this._variant, this._customVariantParams);
+      .setTextPosition();
 
     return this;
-  }
-
-  get duration() {
-    return this._duration;
-  }
-
-  set duration(value: ToastDuration) {
-    if (value) {
-      this._duration = value;
-      this.setToastDuration(value);
-    }
   }
 
   show() {
