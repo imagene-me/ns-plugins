@@ -13,8 +13,8 @@ export class Toasty {
 
   constructor(opts?: ToastOptions) {
     this._text = opts?.text;
-    this._duration = opts?.duration ?? ToastDuration.SHORT;
-    this._variant = opts?.variant ?? ToastVariant.SUCCESS;
+    this._duration = opts?.duration ?? ToastDuration.Short;
+    this._variant = opts?.variant ?? ToastVariant.Success;
     this._customVariantParams = opts?.customVariantParams;
     this._androidOpts = opts?.android ?? {};
     // create the android Toast
@@ -41,6 +41,7 @@ export class Toasty {
     // set the values
     this.setToastDuration(this._duration)
       .setToastPosition()
+      .setTextPosition()
       .setVariant(this._variant, this._customVariantParams);
 
     return this;
@@ -79,13 +80,13 @@ export class Toasty {
 
     if (value) {
       switch (value) {
-        case ToastVariant.SUCCESS:
+        case ToastVariant.Success:
           this.setVariantTemplate({
             backgroundColor: ToastColorMap.SuccessBackground,
             textColor: ToastColorMap.SuccessText
           });
           break;
-        case ToastVariant.ERROR:
+        case ToastVariant.Error:
           this.setVariantTemplate({
             backgroundColor: ToastColorMap.ErrorBackground,
             textColor: ToastColorMap.ErrorText
@@ -115,6 +116,19 @@ export class Toasty {
     return this;
   }
 
+  setTextPosition() {
+    const view = this._toast?.getView();
+    const text = view?.findViewById(
+      android.R.id.message
+    ) as android.widget.TextView;
+
+    if (text != null) {
+      text.setGravity(android.view.Gravity.CENTER)
+    }
+
+    return this;
+  }
+
   setBackgroundColor(value: Color | string) {
     if (value) {
       const view = this._toast?.getView();
@@ -139,10 +153,10 @@ export class Toasty {
 
   setToastDuration(value: ToastDuration) {
     switch (value) {
-      case ToastDuration.SHORT:
+      case ToastDuration.Short:
         this._toast?.setDuration(android.widget.Toast.LENGTH_SHORT);
         break;
-      case ToastDuration.LONG:
+      case ToastDuration.Long:
         this._toast?.setDuration(android.widget.Toast.LENGTH_LONG);
         break;
       default:

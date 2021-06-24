@@ -1,10 +1,10 @@
 import { Color } from '@nativescript/core';
-import { ToastVariant, ToastVariantParams } from './toast.common';
+import { ToastDuration, ToastVariant, ToastVariantParams } from './toast.common';
 
 export declare class Toasty {
   constructor(opts: ToastyOptions);
 
-  position: ToastPosition;
+  duration: ToastDuration;
   variant: ToastVariant;
   customVariantParams: ToastVariantParams;
 
@@ -12,26 +12,6 @@ export declare class Toasty {
    * Shows the toast.
    */
   show(): void;
-
-  /**
-   * Sets the duration of the toast.
-   * @param value [ToastDuration] - Duration of toast.
-   */
-  setToastDuration(value: ToastDuration): this;
-
-  setToastVariant(value: ToastVariant): this;
-
-  setCustomVariantParams(value: ToastVariantParams): this;
-}
-
-export enum ToastDuration {
-  'SHORT' = 'short',
-  'LONG' = 'long'
-}
-
-export enum ToastVariant {
-  'SUCCESS' = 'success',
-  'ERROR' = 'error',
 }
 
 export interface ToastyOptions {

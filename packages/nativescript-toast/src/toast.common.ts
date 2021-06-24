@@ -1,13 +1,13 @@
 import { Color } from '@nativescript/core';
 
 export enum ToastVariant {
-  'SUCCESS' = 'success',
-  'ERROR' = 'error',
+  'Success' = 'success',
+  'Error' = 'error',
 }
 
 export enum ToastDuration {
-  'SHORT' = 'short',
-  'LONG' = 'long'
+  'Short' = 'short',
+  'Long' = 'long'
 }
 
 export enum ToastColorMap {

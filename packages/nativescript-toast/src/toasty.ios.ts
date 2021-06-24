@@ -18,7 +18,7 @@ export class Toasty {
     this._text = opts?.text;
     this._duration = opts?.duration ?? 2;
     this._iOSOpts = opts?.ios ?? {};
-    this._variant = opts?.variant ?? ToastVariant.SUCCESS;
+    this._variant = opts?.variant ?? ToastVariant.Success;
     this._customVariantParams = opts?.customVariantParams;
 
     // set the defaults for the toasty, if passed in constructor those values are used
@@ -91,13 +91,13 @@ export class Toasty {
 
     if (value) {
       switch (value) {
-        case ToastVariant.SUCCESS:
+        case ToastVariant.Success:
           this.setVariantTemplate({
             backgroundColor: ToastColorMap.SuccessBackground,
             textColor: ToastColorMap.SuccessText
           });
           break;
-        case ToastVariant.ERROR:
+        case ToastVariant.Error:
           this.setVariantTemplate({
             backgroundColor: ToastColorMap.ErrorBackground,
             textColor: ToastColorMap.ErrorText
@@ -157,10 +157,10 @@ export class Toasty {
 
   setToastDuration(value: ToastDuration | number) {
     switch (value) {
-      case ToastDuration.SHORT:
+      case ToastDuration.Short:
         ToastManager.shared.duration = 2.0;
         break;
-      case ToastDuration.LONG:
+      case ToastDuration.Long:
         ToastManager.shared.duration = 4.0;
         break;
       default:

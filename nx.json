@@ -25,6 +25,9 @@
 		},
 		"nativescript-highcharts": {
 			"tags": []
+		},
+		"nativescript-toast": {
+			"tags": []
 		}
 	},
 	"workspaceLayout": {
