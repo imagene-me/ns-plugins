@@ -132,8 +132,8 @@
 			}
 		},
 		"nativescript-toast": {
-			"root": "packages/nativescript-toast/src",
-			"sourceRoot": "packages/nativescript-toast/src",
+			"root": "packages/nativescript-toast",
+			"sourceRoot": "packages/nativescript-toast",
 			"projectType": "library",
 			"schematics": {},
 			"architect": {
@@ -141,18 +141,18 @@
 					"builder": "@nrwl/node:package",
 					"options": {
 						"outputPath": "dist/packages/nativescript-toast",
-						"tsConfig": "packages/nativescript-toast/src/tsconfig.json",
-						"packageJson": "packages/nativescript-toast/src/package.json",
-						"main": "packages/nativescript-toast/src/toasty",
-						"typings": "packages/nativescript-toast/src/index.d.ts",
+						"tsConfig": "packages/nativescript-toast/tsconfig.json",
+						"packageJson": "packages/nativescript-toast/package.json",
+						"main": "packages/nativescript-toast/toasty",
+						"typings": "packages/nativescript-toast/index.d.ts",
 						"assets": [
-							"packages/nativescript-toast/src/*.md",
-							"packages/nativescript-toast/src/index.d.ts",
-							"packages/nativescript-toast/src/common.xml",
+							"packages/nativescript-toast/*.md",
+							"packages/nativescript-toast/index.d.ts",
+							"packages/nativescript-toast/common.xml",
 							"LICENSE",
 							{
 								"glob": "**/*",
-								"input": "packages/nativescript-toast/src/platforms/",
+								"input": "packages/nativescript-toast/platforms/",
 								"output": "./platforms/"
 							}
 						]
