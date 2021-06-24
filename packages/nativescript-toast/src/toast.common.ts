@@ -1,4 +1,4 @@
-import { Color } from '@nativescript/core';
+import { Color, Length } from '@nativescript/core';
 
 export enum ToastVariant {
   'Success' = 'success',
@@ -8,6 +8,18 @@ export enum ToastVariant {
 export enum ToastDuration {
   'Short' = 'short',
   'Long' = 'long'
+}
+
+export enum ToastPosition {
+  'BOTTOM' = 'bottom',
+  'BOTTOM_LEFT' = 'bottomLeft',
+  'BOTTOM_RIGHT' = 'bottomRight',
+  'CENTER' = 'center',
+  'CENTER_LEFT' = 'centerLeft',
+  'CENTER_RIGHT' = 'centerRight',
+  'TOP' = 'top',
+  'TOP_LEFT' = 'topLeft',
+  'TOP_RIGHT' = 'topRight'
 }
 
 export enum ToastColorMap {
@@ -42,6 +54,37 @@ export interface ToastOptions {
    * Android specific configuration options.
    */
   android?: any;
+
+  /**
+   * Text color of the Toast message.
+   */
+  textColor?: Color | string;
+
+  /**
+   * Background Color of the Toast.
+   */
+  backgroundColor?: Color | string;
+
+  position?: ToastPosition | number;
+
+  /**
+   *  Y Position
+   */
+  yAxisOffset?: Length | number;
+  /**
+   *  X Position
+   */
+  xAxisOffset?: Length | number;
+
+  /**
+   *  Tap toast to dismiss
+   */
+  tapToDismiss?: boolean;
+
+  /**
+   * The native iOS/Android view to anchor the Toast to.
+   */
+  anchorView?: any;
 
   /**
    * iOS Specific configuration options.
