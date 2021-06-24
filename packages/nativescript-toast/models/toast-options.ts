@@ -1,4 +1,4 @@
-import { Color } from '@nativescript/core';
+import { Color, Length } from '@nativescript/core';
 
 import { ToastDuration } from '../enums/toast-duration';
 import { ToastVariant } from '../enums/toast-variant';
@@ -29,6 +29,37 @@ export interface ToastOptions {
    * Android specific configuration options.
    */
   android?: any;
+
+  /**
+   * Text color of the Toast message.
+   */
+  textColor?: Color | string;
+
+  /**
+   * Background Color of the Toast.
+   */
+  backgroundColor?: Color | string;
+
+  position?: ToastPosition | number;
+
+  /**
+   *  Y Position
+   */
+  yAxisOffset?: Length | number;
+  /**
+   *  X Position
+   */
+  xAxisOffset?: Length | number;
+
+  /**
+   *  Tap toast to dismiss
+   */
+  tapToDismiss?: boolean;
+
+  /**
+   * The native iOS/Android view to anchor the Toast to.
+   */
+  anchorView?: any;
 
   /**
    * iOS Specific configuration options.

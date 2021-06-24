@@ -1,52 +1,54 @@
-import { Component, NgZone } from '@angular/core';
+import { Component } from '@angular/core';
 import { Toasty } from '@imagene.me/nativescript-toast';
 
 @Component({
-	selector: 'demo-nativescript-toast',
-	templateUrl: 'nativescript-toast.component.html',
+  selector: 'demo-nativescript-toast',
+  templateUrl: 'nativescript-toast.component.html'
 })
 export class NativescriptToastComponent {
-	constructor() {}
+  constructor() {
+  }
 
-	ngOnInit() {}
+  ngOnInit() {
+  }
 
-	shortToast(): void {
-		new Toasty({
-			text: 'Default short toast',
-		}).show();
-	}
+  shortToast(): void {
+    new Toasty({
+      text: 'Default short toast'
+    }).show();
+  }
 
-	longToast() {
-		new Toasty({
-			text: 'Default long toast',
-			duration: ToastDuration.Long,
-		}).show();
-	}
+  longToast() {
+    new Toasty({
+      text: 'Default long toast',
+      duration: ToastDuration.Long
+    }).show();
+  }
 
-	errorToast() {
-		new Toasty({
-			text: 'Default error toast',
-			variant: ToastVariant.Error,
-		}).show();
-	}
+  errorToast() {
+    new Toasty({
+      text: 'Default error toast',
+      variant: ToastVariant.Error
+    }).show();
+  }
 
-	customToast() {
-		new Toasty({
-			text: 'Custom toast',
-			customVariantParams: {
-				backgroundColor: '#ccc123',
-				textColor: '#aa22ff',
-			},
-		}).show();
-	}
+  customToast() {
+    new Toasty({
+      text: 'Custom toast',
+      customVariantParams: {
+        backgroundColor: '#ccc123',
+        textColor: '#aa22ff'
+      }
+    }).show();
+  }
 }
 
 export enum ToastVariant {
-	'Success' = 'success',
-	'Error' = 'error',
+  'Success' = 'success',
+  'Error' = 'error',
 }
 
 export enum ToastDuration {
-	'Short' = 'short',
-	'Long' = 'long',
+  'Short' = 'short',
+  'Long' = 'long'
 }
