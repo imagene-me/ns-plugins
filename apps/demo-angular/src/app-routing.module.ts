@@ -7,7 +7,7 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: 'home', component: HomeComponent },
-	{ path: 'nativescript-highcharts', loadChildren: () => import('./plugin-demos/nativescript-highcharts.module').then((m) => m.NativescriptHighchartsModule) },
+	{ path: 'nativescript-google-login', loadChildren: () => import('./plugin-demos/nativescript-google-login.module').then((m) => m.NativescriptGoogleLoginModule) },
 ];
 
 @NgModule({

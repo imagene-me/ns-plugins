@@ -70,6 +70,13 @@ module.exports = {
 					description: '@imagene.me/nativescript-highcharts: Build',
 				},
 			},
+			// @ejaszke/nativescript-google-login
+			'nativescript-google-login': {
+				build: {
+					script: 'nx run nativescript-google-login:build.all',
+					description: '@imagene.me/nativescript-google-login: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -83,6 +90,10 @@ module.exports = {
 			'nativescript-highcharts': {
 				script: 'nx run nativescript-highcharts:focus',
 				description: 'Focus on @imagene.me/nativescript-highcharts',
+			},
+			'nativescript-google-login': {
+				script: 'nx run nativescript-google-login:focus',
+				description: 'Focus on @imagene.me/nativescript-google-login',
 			},
 			reset: {
 				script: 'nx run all:focus',

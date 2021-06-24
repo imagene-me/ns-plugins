@@ -6,7 +6,8 @@
 	"dependencies": {
 		"nativescript-theme-core": "file:../../node_modules/nativescript-theme-core",
 		"@nativescript/core": "file:../../node_modules/@nativescript/core",
-		"@imagene.me/nativescript-highcharts": "file:../../packages/nativescript-highcharts"
+		"@imagene.me/nativescript-highcharts": "file:../../packages/nativescript-highcharts",
+		"@imagene.me/nativescript-google-login": "file:../../packages/nativescript-google-login"
 	},
 	"devDependencies": {
 		"@nativescript/android": "7.0.0",
