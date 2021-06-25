@@ -3,7 +3,7 @@ import { ToastDuration } from './enums/toast-duration';
 import { ToastVariant } from './enums/toast-variant';
 import { ToastVariantParams } from './models/variant-params';
 import { ToastOptions } from './models/toast-options';
-import { ToastColorMap } from './enums/color-map';
+import { COLOR_MAP } from './const/color-map';
 
 export class Toasty {
   private _duration: ToastDuration;
@@ -70,20 +70,10 @@ export class Toasty {
     }
 
     if (value) {
-      switch (value) {
-        case ToastVariant.Success:
-          this.setVariantTemplate({
-            backgroundColor: ToastColorMap.SuccessBackground,
-            textColor: ToastColorMap.SuccessText
-          });
-          break;
-        case ToastVariant.Error:
-          this.setVariantTemplate({
-            backgroundColor: ToastColorMap.ErrorBackground,
-            textColor: ToastColorMap.ErrorText
-          });
-          break;
-      }
+      this.setVariantTemplate({
+        backgroundColor: COLOR_MAP[value].background,
+        textColor: COLOR_MAP[value].text
+      });
     }
 
     return this;

@@ -2,8 +2,9 @@ import { Color, Device, Enums, Frame, Length, Screen, Utils } from '@nativescrip
 import { ToastDuration } from './enums/toast-duration';
 import { ToastVariantParams } from './models/variant-params';
 import { ToastOptions } from './models/toast-options';
-import { ToastColorMap } from './enums/color-map';
 import { ToastVariant } from './enums/toast-variant';
+import { ToastPosition } from './enums/toast-position';
+import { COLOR_MAP } from './const/color-map';
 
 export class Toasty {
   private _text: string;
@@ -415,16 +416,8 @@ export class Toasty {
     }
 
     if (value) {
-      switch (value) {
-        case ToastVariant.Success:
-          this._textColor = ToastColorMap.SuccessText;
-          this._backgroundColor = ToastColorMap.SuccessBackground;
-          break;
-        case ToastVariant.Error:
-          this._textColor = ToastColorMap.ErrorText;
-          this._backgroundColor = ToastColorMap.ErrorBackground;
-          break;
-      }
+      this._textColor = COLOR_MAP[value].text;
+      this._backgroundColor = COLOR_MAP[value].background;
     }
   }
 }
