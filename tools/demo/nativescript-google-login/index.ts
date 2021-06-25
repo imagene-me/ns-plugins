@@ -53,6 +53,7 @@ export class DemoSharedNativescriptGoogleLogin extends DemoSharedBase {
 	silent(): void {
 		this.googleLogin.silentLogin().subscribe(
 			(result) => {
+        console.log(result);
 				Dialogs.alert({
 					message: `Success: ${result.authCode}`,
 				}).then(() => {});
