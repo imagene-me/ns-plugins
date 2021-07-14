@@ -173,6 +173,51 @@
 					}
 				}
 			}
+		},
+		"nativescript-toast": {
+			"root": "packages/nativescript-toast",
+			"sourceRoot": "packages/nativescript-toast",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-toast",
+						"tsConfig": "packages/nativescript-toast/tsconfig.json",
+						"packageJson": "packages/nativescript-toast/package.json",
+						"main": "packages/nativescript-toast/toasty",
+						"typings": "packages/nativescript-toast/index.d.ts",
+						"assets": [
+							"packages/nativescript-toast/*.md",
+							"packages/nativescript-toast/index.d.ts",
+							"packages/nativescript-toast/common.xml",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-toast/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-toast:build", "node tools/scripts/build-finish.ts nativescript-toast"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-toast"],
+						"parallel": false
+					}
+				}
+			}
 		}
 	},
 	"cli": {

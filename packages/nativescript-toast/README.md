@@ -12,21 +12,14 @@ TypeScript
 
 ```js
 import { Toasty } from "@imagene-me/nativescript-toast"
-import { isIOS } from '@nativescript/core/platform';
 // Toasty accepts an object for customizing its behavior/appearance. The only REQUIRED value is `text` which is the message for the toast.
 const toast = new Toasty(
     {
         text: 'Toast message',
-        variant: ToastVariant.SUCCESS
+        variant: ToastVariant.Success
     }
 );
 toast.show();
-
-// you can also chain the methods together and there's no need to create a reference to the Toasty instance with this approach
-new Toasty({ text: 'Some Message' })
-  .setToastDuration(ToastDuration.LONG)
-  .setToastVariant(ToastVariant.ERROR)
-  .show();
 
 // or you can set the properties of the Toasty instance
 const toasty = new Toasty({
@@ -37,11 +30,6 @@ const toasty = new Toasty({
     cornerRadius: 24,
   },
 });
-
-toasty.duration = ToastDuration.SHORT;
-toasty.textColor = '#fff';
-toasty.backgroundColor = new Color('purple');
-toasty.show();
 ```
 
 JavaScript
@@ -55,43 +43,22 @@ toast.show();
 ### API
 
 ```typescript
-
-constructor(
-  opts: ToastyOptions
-);
-
-duration: ToastDuration;
-
-variant: ToastVariant;
-
-customVariantParams: ToastVariantParams;
-
-/**
- * Show the Toasty
- */
-show();
-
-/**
- * Sets the Toast duration.
- */
-setToastDuration(value: ToastDuration): Toasty;
-
-/**
- * Sets the Toast variant.
- */
-setToastVariant(value: ToastVariant): Toasty;
-
-/**
- * Sets the Toast variant.
- */
-setCustomVariantParams(value: ToastVariant): Toasty;
-
-```
-
-```typescript
 export enum ToastDuration {
-  'SHORT',
-  'LONG',
+  'Short',
+  'Long',
+}
+
+export enum ToastVariant {
+  'Success' = 'success',
+  'Error' = 'error',
+}
+
+/**
+ * Custom Variant params
+ */
+export interface ToastVariantParams {
+  backgroundColor: string;
+  textColor: string;
 }
 
 export interface ToastyOptions {

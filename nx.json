@@ -28,6 +28,9 @@
 		},
 		"nativescript-google-login": {
 			"tags": []
+		},
+		"nativescript-toast": {
+			"tags": []
 		}
 	},
 	"workspaceLayout": {
