@@ -9,5 +9,8 @@ export class HomeComponent {
 		{
 			name: 'nativescript-highcharts',
 		},
+		{
+			name: 'nativescript-toast',
+		},
 	];
 }
