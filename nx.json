@@ -26,6 +26,9 @@
 		"nativescript-highcharts": {
 			"tags": []
 		},
+		"nativescript-google-login": {
+			"tags": []
+		},
 		"nativescript-toast": {
 			"tags": []
 		}

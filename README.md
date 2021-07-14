@@ -1,13 +1,6 @@
-# This is fork from @mhtghn/nativescript-highcharts
-
-I only added function to update chart data dynamically
-
-```
-npm run setup
-npm start
-```
-
+- @imagene.me/nativescript-google-login
 - @imagene.me/nativescript-highcharts
+- @imagene.me/nativescript-toast
 
 # How to use?
 

@@ -9,6 +9,7 @@ const routes: Routes = [
 	{ path: 'home', component: HomeComponent },
 	// { path: 'nativescript-highcharts', loadChildren: () => import('./plugin-demos/nativescript-highcharts.module').then((m) => m.NativescriptHighchartsModule) },
 	{ path: 'nativescript-toast', loadChildren: () => import('./plugin-demos/nativescript-toast/nativescript-toast.module').then((m) => m.NativescriptToastModule) },
+	{ path: 'nativescript-google-login', loadChildren: () => import('./plugin-demos/nativescript-google-login.module').then((m) => m.NativescriptGoogleLoginModule) },
 ];
 
 @NgModule({

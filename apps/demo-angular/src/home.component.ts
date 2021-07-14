@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 	demos = [
 		{
-			name: 'nativescript-highcharts',
+			name: 'nativescript-google-login',
 		},
 		{
 			name: 'nativescript-toast',
