@@ -70,7 +70,7 @@ module.exports = {
 					description: '@imagene.me/nativescript-highcharts: Build',
 				},
 			},
-			// @ejaszke/nativescript-google-login
+			// @imagene.me/nativescript-google-login
 			'nativescript-google-login': {
 				build: {
 					script: 'nx run nativescript-google-login:build.all',
