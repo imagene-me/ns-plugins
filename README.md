@@ -1,5 +1,6 @@
 - @imagene.me/nativescript-google-login
 - @imagene.me/nativescript-highcharts
+- @imagene.me/nativescript-shadow
 - @imagene.me/nativescript-toast
 
 # How to use?

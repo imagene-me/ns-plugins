@@ -77,6 +77,13 @@ module.exports = {
 					description: '@imagene.me/nativescript-google-login: Build',
 				},
 			},
+			// @imagene.me/nativescript-shadow
+			'nativescript-shadow': {
+				build: {
+					script: 'nx run nativescript-shadow:build.all',
+					description: '@imagene.me/nativescript-shadow: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -94,6 +101,10 @@ module.exports = {
 			'nativescript-google-login': {
 				script: 'nx run nativescript-google-login:focus',
 				description: 'Focus on @imagene.me/nativescript-google-login',
+			},
+			'nativescript-shadow': {
+				script: 'nx run nativescript-shadow:focus',
+				description: 'Focus on @imagene.me/nativescript-shadow',
 			},
 			reset: {
 				script: 'nx run all:focus',

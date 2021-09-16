@@ -31,6 +31,9 @@
 		},
 		"nativescript-toast": {
 			"tags": []
+		},
+		"nativescript-shadow": {
+			"tags": []
 		}
 	},
 	"workspaceLayout": {

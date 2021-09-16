@@ -10,6 +10,9 @@ export class HomeComponent {
 			name: 'nativescript-google-login',
 		},
 		{
+			name: 'nativescript-shadow',
+		},
+		{
 			name: 'nativescript-toast',
 		},
 	];
