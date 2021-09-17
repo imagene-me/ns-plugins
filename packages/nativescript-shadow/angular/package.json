@@ -1,5 +1,5 @@
 {
-	"name": "nativescript-nativescript-shadow-angular",
+	"name": "nativescript-shadow-angular",
 	"ngPackage": {
 		"lib": {
 			"entryFile": "index.ts",
