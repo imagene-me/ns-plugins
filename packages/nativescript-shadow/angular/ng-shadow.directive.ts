@@ -1,7 +1,6 @@
 import {
   Directive,
   ElementRef,
-  HostListener,
   Input,
   OnChanges,
   OnInit,
@@ -13,8 +12,7 @@ import {
 import { isAndroid, isIOS } from '@nativescript/core';
 
 import { AndroidData, IOSData, Shadow, Shape} from '@imagene.me/nativescript-shadow';
-import { View } from '@nativescript/core';
-import { StackLayout } from '@nativescript/core';
+import { View, GridLayout } from '@nativescript/core';
 import { addWeakEventListener, removeWeakEventListener } from "@nativescript/core";
 
 declare var android;
@@ -126,8 +124,14 @@ export class NativeShadowDirective implements OnInit, OnChanges, AfterViewInit, 
       const originalElement = this.el.nativeElement as View;
 
       this.iosShadowRapper = this.render.createElement(
-        'StackLayout'
-      ) as StackLayout;
+        'GridLayout'
+      ) as GridLayout;
+
+      this.cloneViewPositionProperties(originalElement, this.iosShadowRapper);
+
+      if (!originalElement.backgroundColor) {
+        originalElement.backgroundColor = 'white';
+      }
 
       // wrappingElement.cssClasses = mainElement.cssClasses;
       const parent = originalElement.parentNode;
@@ -288,5 +292,31 @@ export class NativeShadowDirective implements OnInit, OnChanges, AfterViewInit, 
     this.shadowRadius = data.shadowRadius || this.shadowRadius;
     this.rasterize = data.rasterize || this.rasterize;
     this.useShadowPath = data.useShadowPath || this.useShadowPath;
+  }
+
+  private cloneViewPositionProperties(sourceView: View, targetView: View): void {
+    if (sourceView.row > 0) {
+      targetView.row = sourceView.row;
+    }
+
+    if (sourceView.rowSpan > 0) {
+      targetView.rowSpan = sourceView.rowSpan;
+    }
+
+    if (sourceView.col > 0) {
+      targetView.col = sourceView.col;
+    }
+
+    if (sourceView.colSpan > 0) {
+      targetView.colSpan = sourceView.colSpan;
+    }
+
+    if (sourceView.verticalAlignment) {
+      targetView.verticalAlignment = sourceView.verticalAlignment;
+    }
+
+    if (sourceView.horizontalAlignment) {
+      targetView.horizontalAlignment = sourceView.horizontalAlignment;
+    }
   }
 }
