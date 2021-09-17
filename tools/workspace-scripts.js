@@ -84,6 +84,13 @@ module.exports = {
 					description: '@imagene.me/nativescript-shadow: Build',
 				},
 			},
+			// @imagene.me/nativescript-google-login
+			'nativescript-toast': {
+				build: {
+					script: 'nx run nativescript-toast:build.all',
+					description: '@imagene.me/nativescript-toast: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
