@@ -73,7 +73,12 @@
 					"builder": "@nrwl/workspace:run-commands",
 					"outputs": ["dist/packages"],
 					"options": {
-						"commands": ["nx run nativescript-highcharts:build.all", "nx run nativescript-google-login:build.all"],
+						"commands": [
+							"nx run nativescript-highcharts:build.all",
+							"nx run nativescript-google-login:build.all",
+							"nx run nativescript-toast:build.all",
+							"nx run nativescript-shadow:build.all"
+						],
 						"parallel": false
 					}
 				},
@@ -214,6 +219,49 @@
 					"outputs": ["dist/packages"],
 					"options": {
 						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-toast"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-shadow": {
+			"root": "packages/nativescript-shadow",
+			"sourceRoot": "packages/nativescript-shadow",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-shadow",
+						"tsConfig": "packages/nativescript-shadow/tsconfig.json",
+						"packageJson": "packages/nativescript-shadow/package.json",
+						"main": "packages/nativescript-shadow/index.ts",
+						"assets": [
+							"packages/nativescript-shadow/*.md",
+							"packages/nativescript-shadow/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-shadow/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-shadow:build", "node tools/scripts/build-finish.ts nativescript-shadow"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-shadow"],
 						"parallel": false
 					}
 				}

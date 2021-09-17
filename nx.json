@@ -1,5 +1,5 @@
 {
-	"npmScope": "ejaszke",
+	"npmScope": "imagene.me",
 	"affected": {
 		"defaultBase": "master"
 	},
@@ -30,6 +30,9 @@
 			"tags": []
 		},
 		"nativescript-toast": {
+			"tags": []
+		},
+		"nativescript-shadow": {
 			"tags": []
 		}
 	},

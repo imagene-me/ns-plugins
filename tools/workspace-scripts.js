@@ -62,7 +62,7 @@ module.exports = {
 		},
 		// packages
 		// build output is always in dist/packages
-		'@imagene.me': {
+		'@imageneme': {
 			// @imagene.me/nativescript-highcharts
 			'nativescript-highcharts': {
 				build: {
@@ -70,11 +70,25 @@ module.exports = {
 					description: '@imagene.me/nativescript-highcharts: Build',
 				},
 			},
-			// @ejaszke/nativescript-google-login
+			// @imagene.me/nativescript-google-login
 			'nativescript-google-login': {
 				build: {
 					script: 'nx run nativescript-google-login:build.all',
 					description: '@imagene.me/nativescript-google-login: Build',
+				},
+			},
+			// @imagene.me/nativescript-shadow
+			'nativescript-shadow': {
+				build: {
+					script: 'nx run nativescript-shadow:build.all',
+					description: '@imagene.me/nativescript-shadow: Build',
+				},
+			},
+			// @imagene.me/nativescript-google-login
+			'nativescript-toast': {
+				build: {
+					script: 'nx run nativescript-toast:build.all',
+					description: '@imagene.me/nativescript-toast: Build',
 				},
 			},
 			'build-all': {
@@ -94,6 +108,10 @@ module.exports = {
 			'nativescript-google-login': {
 				script: 'nx run nativescript-google-login:focus',
 				description: 'Focus on @imagene.me/nativescript-google-login',
+			},
+			'nativescript-shadow': {
+				script: 'nx run nativescript-shadow:focus',
+				description: 'Focus on @imagene.me/nativescript-shadow',
 			},
 			reset: {
 				script: 'nx run all:focus',

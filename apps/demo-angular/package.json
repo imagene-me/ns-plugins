@@ -17,7 +17,8 @@
 		"zone.js": "file:../../node_modules/zone.js",
 		"@imagene.me/nativescript-highcharts": "file:../../dist/packages/nativescript-highcharts",
 		"@imagene.me/nativescript-toast": "file:../../dist/packages/nativescript-toast",
-		"@imagene.me/nativescript-google-login": "file:../../dist/packages/nativescript-google-login"
+		"@imagene.me/nativescript-google-login": "file:../../dist/packages/nativescript-google-login",
+		"@imagene.me/nativescript-shadow": "file:../../dist/packages/nativescript-shadow"
 	},
 	"devDependencies": {
 		"@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",

@@ -10,6 +10,12 @@ export class HomeComponent {
 			name: 'nativescript-google-login',
 		},
 		{
+			name: 'nativescript-highcharts',
+		},
+		{
+			name: 'nativescript-shadow',
+		},
+		{
 			name: 'nativescript-toast',
 		},
 	];

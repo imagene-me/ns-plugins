@@ -6,7 +6,8 @@
     <ScrollView class="h-full">
       <StackLayout>
         <Button text="add a package first" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
-          <Button text="nativescript-google-login" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+        <Button text="nativescript-google-login" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
+        <Button text="nativescript-shadow" tap="{{ viewDemo }}" class="btn btn-primary view-demo"/>
       </StackLayout>
     </ScrollView>
   </StackLayout>
