@@ -129,10 +129,6 @@ export class NativeShadowDirective implements OnInit, OnChanges, AfterViewInit, 
 
       this.cloneViewPositionProperties(originalElement, this.iosShadowRapper);
 
-      if (!originalElement.backgroundColor) {
-        originalElement.backgroundColor = 'white';
-      }
-
       // wrappingElement.cssClasses = mainElement.cssClasses;
       const parent = originalElement.parentNode;
       this.render.insertBefore(parent, this.iosShadowRapper, originalElement);
