@@ -53,4 +53,6 @@ npm run publish-packages
 - You will then be prompted for the version to use. Leaving blank will auto bump the patch version (it also handles prerelease types like alpha, beta, rc, etc. - It even auto tags the corresponding prelease type on npm).
 - You will then be given a brief sanity check 🧠😊
 
+Note: You have to be logged in to npm in console before publish package (confluence)
+
 <h3 align="center">Made with ❤️</h3>
