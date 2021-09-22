@@ -3,6 +3,7 @@ import { GoogleLoginConfig } from './models/google-login-config';
 import { GoogleLoginResult } from './models/google-login-result';
 import { Observable, Subscriber } from 'rxjs';
 import { Common } from './common';
+import { GoogleLoginError } from './enums/google-login-error';
 
 
 declare const java;
@@ -17,7 +18,7 @@ const actionRunnable = (function() {
   });
 })();
 
-export class GoogleLogin extends Common {
+class GoogleLogin extends Common {
   private googleClient: any; // com.google.android.gms.common.api.GoogleApiClient
   private mGoogleApiClient: any;
   private rcGoogleSignIn: number = 597; // < 16 bits
@@ -49,15 +50,15 @@ export class GoogleLogin extends Common {
                   authCode: account.getServerAuthCode(),
                 });
               } else {
-                subscriber.error(new Error('NO SUCCESS'));
+                subscriber.error(new Error(GoogleLoginError.NoSuccess));
               }
               // @ts-ignore
             } else if (resultCode === android.app.Activity.RESULT_CANCELED) {
-              subscriber.error(new Error('CANCELLED'));
+              subscriber.error(new Error(GoogleLoginError.Cancelled));
             }
           }
         } catch (e) {
-          subscriber.error(new Error('ERROR'));
+          subscriber.error(new Error(GoogleLoginError.UnknownError));
         }
 
         subscriber.complete();
@@ -91,7 +92,7 @@ export class GoogleLogin extends Common {
               authCode: account.getServerAuthCode(),
             });
           } else {
-            subscriber.error(new Error('NO SUCCESS'));
+            subscriber.error(new Error(GoogleLoginError.NoSuccess));
           }
           subscriber.complete();
         };
@@ -132,7 +133,6 @@ export class GoogleLogin extends Common {
             throw new Error('[ERROR] runOnUiThread(): ' + e);
           }
         };
-        console.log('Starting activity for result...');
         this.activity.runOnUiThread(uiAction);
       } catch (error) {
         subscriber.error(error);
@@ -155,6 +155,14 @@ export class GoogleLogin extends Common {
     });
   }
 
+  setAndroidActivity(activity: any): void {
+    this.activity = activity;
+  }
+
+  setIosUIViewController(uIViewController: any) {
+    this.activity = uIViewController;
+  }
+
   private initGoogleClient(): void {
     try {
       if (!this.googleClient) {
@@ -162,7 +170,7 @@ export class GoogleLogin extends Common {
           this.gms.auth.api.signin.GoogleSignIn.getClient(this.activity, this.getGoogleSignInOptions());
       }
     } catch (error) {
-      throw new Error('ERROR INIT GOOGLE CLIENT' + error);
+      throw new Error(GoogleLoginError.InitError);
     }
   }
 
@@ -176,8 +184,13 @@ export class GoogleLogin extends Common {
           .build();
       }
     } catch (error) {
-      throw new Error('ERROR INIT GOOGLE API CLIENT' + error);
+      throw new Error(GoogleLoginError.InitError);
     }
   }
 
+}
+
+export {
+  GoogleLoginError,
+  GoogleLogin,
 }
