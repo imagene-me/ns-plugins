@@ -5,21 +5,18 @@ import { Observable as NsObservable } from '@nativescript/core';
 import { Observable } from 'rxjs';
 
 export abstract class Common extends NsObservable {
-  protected config: GoogleLoginConfig;
-  protected activity: any;
-  constructor(config: GoogleLoginConfig, activity?: any) {
-    super();
-    this.config = config;
-    this.activity = activity;
-  }
-  abstract login(): Observable<GoogleLoginResult>;
-  abstract logout(): Observable<boolean>;
-  abstract setAndroidActivity(activity: any): void;
-  abstract setIosUIViewController(uIViewController: any): void;
+	protected config: GoogleLoginConfig;
+	protected activity: any;
+	constructor(config: GoogleLoginConfig, activity?: any) {
+		super();
+		this.config = config;
+		this.activity = activity;
+	}
+	abstract login(): Observable<GoogleLoginResult>;
+	abstract silentLogin(): Observable<GoogleLoginResult>;
+	abstract logout(): Observable<boolean>;
+	abstract setAndroidActivity(activity: any): void;
+	abstract setIosUIViewController(uIViewController: any): void;
 }
 
-export {
-  GoogleLoginConfig,
-  GoogleLoginResult,
-  GoogleLoginError,
-}
+export { GoogleLoginConfig, GoogleLoginResult, GoogleLoginError };

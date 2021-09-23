@@ -25,6 +25,13 @@ class GoogleLogin extends Common {
     });
   }
 
+  silentLogin(): Observable<GoogleLoginResult> {
+    return new Observable<GoogleLoginResult>((subscriber) => {
+      subscriber.error(new Error(GoogleLoginError.SilentLoginNotSupported));
+      subscriber.complete();
+    });
+  }
+
   logout(): Observable<boolean> {
     return new Observable((subscriber) => {
       try {

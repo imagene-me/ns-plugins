@@ -3,4 +3,5 @@ export enum GoogleLoginError {
   NoSuccess = 'NO SUCCESS',
   UnknownError = 'UNKNOWN ERROR',
   InitError = 'INIT ERROR',
+  SilentLoginNotSupported = 'METHOD NOT SUPPORTED ON IOS PLATFORM',
 }
