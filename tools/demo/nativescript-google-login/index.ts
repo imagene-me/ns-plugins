@@ -42,6 +42,20 @@ export class DemoSharedNativescriptGoogleLogin extends DemoSharedBase {
 		);
 	}
 
+  silentLogin(): void {
+    if (isIOS) {
+      this.googleLogin.setIosUIViewController(Application.ios.rootController);
+    }
+    this.googleLogin.silentLogin().subscribe(
+      (result) => {
+        console.log('Success', result);
+      },
+      (error) => {
+        console.log('Error', error);
+      }
+    );
+  }
+
 	logout(): void {
 		this.googleLogin.logout().subscribe(
 			(result) => {
