@@ -5,105 +5,120 @@ import { Observable, Subscriber } from 'rxjs';
 import { GoogleLoginError } from './enums/google-login-error';
 
 class GoogleLogin extends Common {
-	private readonly scopes: string[] = ['https://www.googleapis.com/auth/fitness.activity.read', 'https://www.googleapis.com/auth/fitness.location.read'];
 
-	constructor(config: GoogleLoginConfig, activity: any) {
-		super(config, activity);
-	}
+  private readonly scopes: string[] = [
+    'https://www.googleapis.com/auth/fitness.activity.read',
+    'https://www.googleapis.com/auth/fitness.location.read',
+  ];
 
-	login(): Observable<GoogleLoginResult> {
-		return new Observable((subscriber) => {
-			try {
-				this.signIn(this.signInCallback(subscriber));
-			} catch (error) {
-				this.handleError(subscriber)(error);
-			}
-		});
-	}
+  constructor(config: GoogleLoginConfig, activity: any) {
+    super(config, activity);
+  }
 
-	silentLogin(): Observable<GoogleLoginResult> {
-		return new Observable<GoogleLoginResult>((subscriber) => {
-			subscriber.error(new Error(GoogleLoginError.SilentLoginNotSupported));
-			subscriber.complete();
-		});
-	}
+  login(): Observable<GoogleLoginResult> {
+    return new Observable((subscriber) => {
+      try {
+        this.signIn(this.signInCallback(subscriber));
+      } catch (error) {
+        this.handleError(subscriber)(error);
+      }
+    });
+  }
 
-	logout(): Observable<boolean> {
-		return new Observable((subscriber) => {
-			try {
-				GIDSignIn.sharedInstance.signOut();
-				subscriber.next(true);
-			} catch (error) {
-				subscriber.error(error);
-			}
-			subscriber.complete();
-		});
-	}
+  silentLogin(): Observable<GoogleLoginResult> {
+    return new Observable<GoogleLoginResult>((subscriber) => {
+      subscriber.error(new Error(GoogleLoginError.SilentLoginNotSupported));
+      subscriber.complete();
+    });
+  }
 
-	setAndroidActivity(activity: any): void {
-		this.activity = activity;
-	}
+  logout(): Observable<boolean> {
+    return new Observable((subscriber) => {
+      try {
+        GIDSignIn.sharedInstance.signOut();
+        subscriber.next(true);
+      } catch (error) {
+        subscriber.error(error);
+      }
+      subscriber.complete();
+    });
+  }
 
-	setIosUIViewController(uIViewController: any) {
-		this.activity = uIViewController;
-	}
+  setAndroidActivity(activity: any): void {
+    this.activity = activity;
+  }
 
-	private createGIDConfigurationFromConfig(): GIDConfiguration {
-		return new GIDConfiguration({
-			clientID: this.config.clientId,
-			serverClientID: this.config.serverClientId,
-		}).initWithClientIDServerClientID(this.config.clientId, this.config.serverClientId);
-	}
+  setIosUIViewController(uIViewController: any) {
+    this.activity = uIViewController;
+  }
 
-	private signIn(callback: (user: GIDGoogleUser, error: NSError) => void): void {
-		GIDSignIn.sharedInstance.signInWithConfigurationPresentingViewControllerCallback(this.createGIDConfigurationFromConfig(), this.activity, callback);
-	}
+  private createGIDConfigurationFromConfig(): GIDConfiguration {
+    return new GIDConfiguration({
+      clientID: this.config.clientId,
+      serverClientID: this.config.serverClientId,
+    }).initWithClientIDServerClientID(this.config.clientId, this.config.serverClientId);
+  }
 
-	private addScopes(callback: (user: GIDGoogleUser, error: NSError) => void): void {
-		GIDSignIn.sharedInstance.addScopesPresentingViewControllerCallback(this.scopes, this.activity, callback);
-	}
+  private signIn(callback: (user: GIDGoogleUser, error: NSError) => void): void {
+    GIDSignIn.sharedInstance.signInWithConfigurationPresentingViewControllerCallback(
+      this.createGIDConfigurationFromConfig(),
+      this.activity,
+      callback,
+    );
+  }
 
-	private signInCallback = (subscriber: Subscriber<GoogleLoginResult>) => (user: GIDGoogleUser, error: NSError): void => {
-		if (error) {
-			this.handleError(subscriber)(error);
-			return;
-		}
-		this.addScopes(this.addScopesCallback(subscriber));
-	};
+  private addScopes(callback: (user: GIDGoogleUser, error: NSError) => void): void {
+    GIDSignIn.sharedInstance.addScopesPresentingViewControllerCallback(
+      this.scopes,
+      this.activity,
+      callback,
+    );
+  }
 
-	private addScopesCallback = (subscriber: Subscriber<GoogleLoginResult>) => (user: GIDGoogleUser, error: NSError): void => {
-		if (error) {
-			this.handleError(subscriber)(error);
-			return;
-		}
-		this.onSuccessLogin(subscriber)(user);
-	};
+  private signInCallback = (subscriber: Subscriber<GoogleLoginResult>) => (user: GIDGoogleUser, error: NSError): void => {
+    if (error) {
+      this.handleError(subscriber)(error);
+      return;
+    }
+    this.addScopes(this.addScopesCallback(subscriber));
+  }
 
-	private onSuccessLogin = (subscriber: Subscriber<GoogleLoginResult>) => (user: GIDGoogleUser) => {
-		subscriber.next({
-			authCode: user.serverAuthCode,
-		});
-		subscriber.complete();
-	};
+  private addScopesCallback = (subscriber: Subscriber<GoogleLoginResult>) => (user: GIDGoogleUser, error: NSError): void => {
+    if (error) {
+      this.handleError(subscriber)(error);
+      return;
+    }
+    this.onSuccessLogin(subscriber)(user);
+  }
 
-	private handleError = (subscriber: Subscriber<GoogleLoginResult>) => (error: NSError) => {
-		subscriber.error(this.getError(error));
-		subscriber.complete();
-	};
+  private onSuccessLogin = (subscriber: Subscriber<GoogleLoginResult>) => (user: GIDGoogleUser) => {
+    subscriber.next({
+      authCode: user.serverAuthCode,
+    });
+    subscriber.complete();
+  }
 
-	private getError(error: NSError | Error): NSError | Error {
-		if ('code' in error) {
-			switch (error.code.toString()) {
-				case '-1':
-					return Error(GoogleLoginError.UnknownError);
-				case '-5':
-					return Error(GoogleLoginError.Cancelled);
-				default:
-					return Error(error.localizedDescription);
-			}
-		}
-		return error;
-	}
+  private handleError = (subscriber: Subscriber<GoogleLoginResult>) => (error: NSError) => {
+    subscriber.error(this.getError(error));
+    subscriber.complete();
+  }
+
+  private getError(error: NSError | Error): NSError | Error {
+    if ('code' in error) {
+      switch (error.code.toString()) {
+        case '-1':
+          return Error(GoogleLoginError.UnknownError);
+        case '-5':
+          return Error(GoogleLoginError.Cancelled);
+        default:
+          return Error(error.localizedDescription);
+      }
+    }
+    return error;
+  }
 }
 
-export { GoogleLoginError, GoogleLogin };
+export {
+  GoogleLoginError,
+  GoogleLogin,
+}
