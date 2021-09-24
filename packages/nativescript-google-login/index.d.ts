@@ -1,4 +1,9 @@
-import { Common } from './common';
+import { Common, GoogleLoginResult, GoogleLoginError, GoogleLoginConfig } from './common';
 
-export declare class GoogleLogin extends Common {
+export declare class GoogleLogin extends Common { }
+
+export {
+  GoogleLoginConfig,
+  GoogleLoginError,
+  GoogleLoginResult,
 }

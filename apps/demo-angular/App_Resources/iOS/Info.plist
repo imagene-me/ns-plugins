@@ -43,31 +43,21 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-  <key>ITSAppUsesNonExemptEncryption</key>
-  <false/>
-	<key>NSAppTransportSecurity</key>
-  <dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-		<key>NSAllowsArbitraryLoadsForMedia</key>
-		<true/>
-		<key>NSAllowsArbitraryLoadsInWebContent</key>
-		<true/>
-	</dict>
+
 	<key>CFBundleURLTypes</key>
-      <array>
-      	<dict>
-      		<key>CFBundleTypeRole</key>
-      		<string>Editor</string>
-      		<key>CFBundleURLSchemes</key>
-      		<array>
-      			<string>com.googleusercontent.apps.1093279712153-qgrdtsrg76kleref0ip14k2jgpktq8h0</string>
-      			<string>com.googleusercontent.apps.1093279712153-m5ggq5i59cogt538c62fg3lss7tforig</string>
-      			<!-- It shoud look like this: com.googleusercontent.apps.123123123-172648sdfsd76f8s7d6f8sd -->
-      			<!-- Get it from your GoogleService-Info.plist -->
-      			<!-- Read more - https://developers.google.com/identity/sign-in/ios/start-integrating -->
-      		</array>
-      	</dict>
-      </array>
+    <array>
+    	<dict>
+    		<key>CFBundleTypeRole</key>
+    		<string>Editor</string>
+    		<key>CFBundleURLSchemes</key>
+    		<array>
+    			<string>com.googleusercontent.apps.1093279712153-9fs5dqe2353aal0mj005fp5katg58m2e</string>
+    			<string>com.googleusercontent.apps.1093279712153-m5ggq5i59cogt538c62fg3lss7tforig</string>
+    			<!-- It shoud look like this: com.googleusercontent.apps.123123123-172648sdfsd76f8s7d6f8sd -->
+    			<!-- Get it from your GoogleService-Info.plist -->
+    			<!-- Read more - https://developers.google.com/identity/sign-in/ios/start-integrating -->
+    		</array>
+    	</dict>
+    </array>
 </dict>
 </plist>
