@@ -1,0 +1,20 @@
+android {
+  signingConfigs {
+        debug {
+            storeFile file("../../../dev.keystore")
+            storePassword "59BN6QhEB4mzu9u27kTR"
+            keyAlias "key"
+            keyPassword "86eU6kCbmfKzrvp9Xwwe"
+        }
+  }
+  buildTypes {
+        debug {
+            signingConfig {
+                  storeFile file("../../../dev.keystore")
+                  storePassword "59BN6QhEB4mzu9u27kTR"
+                  keyAlias "key"
+                  keyPassword "86eU6kCbmfKzrvp9Xwwe"
+            }
+        }
+  }
+}
