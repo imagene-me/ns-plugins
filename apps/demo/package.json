@@ -8,7 +8,8 @@
 		"@nativescript/core": "file:../../node_modules/@nativescript/core",
 		"@imagene.me/nativescript-highcharts": "file:../../packages/nativescript-highcharts",
 		"@imagene.me/nativescript-google-login": "file:../../packages/nativescript-google-login",
-		"@imagene.me/nativescript-shadow": "file:../../packages/nativescript-shadow"
+		"@imagene.me/nativescript-shadow": "file:../../packages/nativescript-shadow",
+		"@imagene.me/nativescript-ox-button": "file:../../packages/nativescript-ox-button"
 	},
 	"devDependencies": {
 		"@nativescript/android": "7.0.0",
