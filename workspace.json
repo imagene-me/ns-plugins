@@ -73,12 +73,7 @@
 					"builder": "@nrwl/workspace:run-commands",
 					"outputs": ["dist/packages"],
 					"options": {
-						"commands": [
-							"nx run nativescript-highcharts:build.all",
-							"nx run nativescript-google-login:build.all",
-							"nx run nativescript-toast:build.all",
-							"nx run nativescript-shadow:build.all"
-						],
+						"commands": ["nx run nativescript-highcharts:build.all", "nx run nativescript-google-login:build.all", "nx run nativescript-toast:build.all", "nx run nativescript-shadow:build.all", "nx run nativescript-ox-button:build.all"],
 						"parallel": false
 					}
 				},
@@ -262,6 +257,49 @@
 					"outputs": ["dist/packages"],
 					"options": {
 						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-shadow"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-ox-button": {
+			"root": "packages/nativescript-ox-button",
+			"sourceRoot": "packages/nativescript-ox-button",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-ox-button",
+						"tsConfig": "packages/nativescript-ox-button/tsconfig.json",
+						"packageJson": "packages/nativescript-ox-button/package.json",
+						"main": "packages/nativescript-ox-button/index.ts",
+						"assets": [
+							"packages/nativescript-ox-button/*.md",
+							"packages/nativescript-ox-button/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-ox-button/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-ox-button:build", "node tools/scripts/build-finish.ts nativescript-ox-button"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-ox-button"],
 						"parallel": false
 					}
 				}
