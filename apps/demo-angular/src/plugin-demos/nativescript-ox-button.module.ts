@@ -3,19 +3,17 @@ import { NativeScriptCommonModule, NativeScriptRouterModule } from '@nativescrip
 import { NativescriptOxButtonComponent } from './nativescript-ox-button.component';
 import { NativeScriptOxButtonModule as NgOxButtonModule } from '@imagene.me/nativescript-ox-button/angular';
 
-console.log(NgOxButtonModule)
-
 @NgModule({
 	imports: [
-    NgOxButtonModule,
-	  NativeScriptCommonModule,
-    NativeScriptRouterModule.forChild([
-      {
-        path: '',
-        component: NativescriptOxButtonComponent
-      }
-    ])
-  ],
+		NgOxButtonModule,
+		NativeScriptCommonModule,
+		NativeScriptRouterModule.forChild([
+			{
+				path: '',
+				component: NativescriptOxButtonComponent,
+			},
+		]),
+	],
 	declarations: [NativescriptOxButtonComponent],
 	schemas: [NO_ERRORS_SCHEMA],
 })
