@@ -1,5 +1,7 @@
 - @imagene.me/nativescript-google-login
 - @imagene.me/nativescript-highcharts
+- @imagene.me/nativescript-ngx-shadow
+- @imagene.me/nativescript-ox-button
 - @imagene.me/nativescript-shadow
 - @imagene.me/nativescript-toast
 

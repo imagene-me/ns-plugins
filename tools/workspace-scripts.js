@@ -91,6 +91,13 @@ module.exports = {
 					description: '@imagene.me/nativescript-toast: Build',
 				},
 			},
+			// @imagene.me/nativescript-ox-button
+			'nativescript-ox-button': {
+				build: {
+					script: 'nx run nativescript-ox-button:build.all',
+					description: '@imagene.me/nativescript-ox-button: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -112,6 +119,10 @@ module.exports = {
 			'nativescript-shadow': {
 				script: 'nx run nativescript-shadow:focus',
 				description: 'Focus on @imagene.me/nativescript-shadow',
+			},
+			'nativescript-ox-button': {
+				script: 'nx run nativescript-ox-button:focus',
+				description: 'Focus on @imagene.me/nativescript-ox-button',
 			},
 			reset: {
 				script: 'nx run all:focus',

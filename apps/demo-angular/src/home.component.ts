@@ -13,6 +13,9 @@ export class HomeComponent {
 			name: 'nativescript-highcharts',
 		},
 		{
+			name: 'nativescript-ox-button',
+		},
+		{
 			name: 'nativescript-shadow',
 		},
 		{
