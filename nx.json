@@ -14,9 +14,6 @@
 		"nx.json": "*"
 	},
 	"projects": {
-		"demo": {
-			"tags": []
-		},
 		"demo-angular": {
 			"tags": []
 		},

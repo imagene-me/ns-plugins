@@ -1,38 +1,6 @@
 {
 	"version": 1,
 	"projects": {
-		"demo": {
-			"root": "apps/demo/",
-			"sourceRoot": "apps/demo/src",
-			"projectType": "application",
-			"prefix": "demo",
-			"architect": {
-				"ios": {
-					"builder": "@nrwl/workspace:run-commands",
-					"options": {
-						"commands": ["ns debug ios --no-hmr --emulator --env.testing"],
-						"cwd": "apps/demo",
-						"parallel": false
-					}
-				},
-				"android": {
-					"builder": "@nrwl/workspace:run-commands",
-					"options": {
-						"commands": ["ns debug android --no-hmr --emulator --env.testing"],
-						"cwd": "apps/demo",
-						"parallel": false
-					}
-				},
-				"clean": {
-					"builder": "@nrwl/workspace:run-commands",
-					"options": {
-						"commands": ["ns clean", "npm i"],
-						"cwd": "apps/demo",
-						"parallel": false
-					}
-				}
-			}
-		},
 		"demo-angular": {
 			"root": "apps/demo-angular/",
 			"sourceRoot": "apps/demo-angular/src",
