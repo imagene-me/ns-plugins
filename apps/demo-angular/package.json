@@ -1,5 +1,5 @@
 {
-	"main": "main.js",
+	"main": "src/main.ts",
 	"dependencies": {
 		"@angular/animations": "file:../../node_modules/@angular/animations",
 		"@angular/common": "file:../../node_modules/@angular/common",
@@ -16,16 +16,15 @@
 		"@imagene.me/nativescript-toast": "file:../../dist/packages/nativescript-toast",
 		"@nativescript/angular": "file:../../node_modules/@nativescript/angular",
 		"@nativescript/core": "file:../../node_modules/@nativescript/core",
-		"nativescript-theme-core": "file:../../node_modules/nativescript-theme-core",
-		"reflect-metadata": "file:../../node_modules/reflect-metadata",
+		"@nativescript/theme": "file:../../node_modules/@nativescript/theme",
 		"rxjs": "file:../../node_modules/rxjs",
-		"zone.js": "file:../../node_modules/zone.js"
+		"zone.js": "file:../../node_modules/zone.js",
+		"postcss-import": "^14.0.0",
+		"postcss": "^8.2.4"
 	},
 	"devDependencies": {
 		"@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",
-		"@nativescript/android": "7.0.0",
-		"@nativescript/ios": "7.0.0",
-		"@nativescript/webpack": "~3.0.0",
+		"@nativescript/webpack": "file:../../node_modules/@nativescript/webpack",
 		"@ngtools/webpack": "file:../../node_modules/@ngtools/webpack",
 		"typescript": "file:../../node_modules/typescript"
 	}
