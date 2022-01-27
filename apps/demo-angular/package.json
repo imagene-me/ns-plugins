@@ -24,6 +24,8 @@
 	},
 	"devDependencies": {
 		"@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",
+		"@nativescript/android": "8.1.1",
+		"@nativescript/ios": "8.1.0",
 		"@nativescript/webpack": "file:../../node_modules/@nativescript/webpack",
 		"@ngtools/webpack": "file:../../node_modules/@ngtools/webpack",
 		"typescript": "file:../../node_modules/typescript"
