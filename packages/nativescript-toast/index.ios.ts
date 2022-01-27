@@ -1,4 +1,4 @@
-import { Color, Device, Enums, Frame, Length, Screen, Utils } from '@nativescript/core';
+import { Color, Device, Enums, Frame, CoreTypes, Screen, Utils } from '@nativescript/core';
 import { ToastDuration } from './enums/toast-duration';
 import { ToastVariantParams } from './models/variant-params';
 import { ToastOptions } from './models/toast-options';
@@ -15,8 +15,8 @@ export class Toasty {
   private _backgroundColor: Color | string;
   private _iOSOpts: ToastOptions['ios'];
   private _toastStyle;
-  private _x: Length;
-  private _y: Length;
+  private _x: CoreTypes.LengthType;
+  private _y: CoreTypes.LengthType;
   private _tapToDismiss: boolean;
   private _anchorView: any;
 
@@ -117,21 +117,21 @@ export class Toasty {
     }
   }
 
-  set xAxisOffset(value: Length | number) {
+  set xAxisOffset(value: CoreTypes.LengthType | number) {
     this._x = value;
     this._updateToastPosition();
   }
 
-  set yAxisOffset(value: Length | number) {
+  set yAxisOffset(value: CoreTypes.LengthType | number) {
     this._y = value;
     this._updateToastPosition();
   }
 
-  get xAxisOffset(): Length | number {
+  get xAxisOffset(): CoreTypes.LengthType | number {
     return this._x;
   }
 
-  get yAxisOffset(): Length | number {
+  get yAxisOffset(): CoreTypes.LengthType | number {
     return this._y;
   }
 
