@@ -1,6 +1,6 @@
 {
 	"name": "@imagene.me/nativescript-google-login",
-	"version": "1.2.0",
+	"version": "2.0.0",
 	"description": "Add Google SignIn to your Nativescript Application. This plugin provides an AuthCode for server-side authentication",
 	"main": "index",
 	"typings": "index.d.ts",

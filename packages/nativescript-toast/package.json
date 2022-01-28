@@ -1,6 +1,6 @@
 {
 	"name": "@imagene.me/nativescript-toast",
-	"version": "1.0.11",
+	"version": "2.0.0",
 	"description": "Imagene.me NativeScript toast plugin",
 	"main": "index",
 	"typings": "index.d.ts",
