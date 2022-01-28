@@ -2,15 +2,7 @@
 	"name": "nativescript-ox-button-angular",
 	"ngPackage": {
 		"lib": {
-			"entryFile": "index.ts",
-			"umdModuleIds": {
-				"@nativescript/core": "ns-core",
-				"@nativescript/angular": "ns-angular",
-				"@imagene.me/nativescript-ox-button": "ns-nativescript-ox-button"
-			}
-		},
-		"whitelistedNonPeerDependencies": [
-			"."
-		]
+			"entryFile": "index.ts"
+		}
 	}
 }
