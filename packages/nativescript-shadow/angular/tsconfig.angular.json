@@ -6,5 +6,6 @@
 		"paths": {
 			"@imagene.me/nativescript-shadow": ["../../../dist/packages/nativescript-shadow"]
 		}
-	}
+	},
+  "files": []
 }
