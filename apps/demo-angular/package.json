@@ -18,9 +18,7 @@
 		"@nativescript/core": "file:../../node_modules/@nativescript/core",
 		"@nativescript/theme": "file:../../node_modules/@nativescript/theme",
 		"rxjs": "file:../../node_modules/rxjs",
-		"zone.js": "file:../../node_modules/zone.js",
-		"postcss-import": "^14.0.0",
-		"postcss": "^8.2.4"
+		"zone.js": "file:../../node_modules/zone.js"
 	},
 	"devDependencies": {
 		"@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",
