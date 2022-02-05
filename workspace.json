@@ -1,290 +1,355 @@
 {
-	"version": 1,
-	"projects": {
-		"demo-angular": {
-			"root": "apps/demo-angular/",
-			"sourceRoot": "apps/demo-angular/src",
-			"projectType": "application",
-			"prefix": "demo",
-			"architect": {
-				"ios": {
-					"executor": "@nrwl/workspace:run-commands",
-					"options": {
-						"commands": ["ns debug ios --no-hmr --emulator --env.testing"],
-						"cwd": "apps/demo-angular",
-						"parallel": false
-					}
-				},
-				"android": {
-					"executor": "@nrwl/workspace:run-commands",
-					"options": {
-						"commands": ["ns debug android --no-hmr --emulator --env.testing"],
-						"cwd": "apps/demo-angular",
-						"parallel": false
-					}
-				},
-				"clean": {
-					"executor": "@nrwl/workspace:run-commands",
-					"options": {
-						"commands": ["ns clean", "npm i"],
-						"cwd": "apps/demo-angular",
-						"parallel": false
-					}
-				}
-			}
-		},
-		"all": {
-			"root": "packages",
-			"projectType": "library",
-			"architect": {
-				"build": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx run nativescript-highcharts:build.all", "nx run nativescript-google-login:build.all", "nx run nativescript-toast:build.all", "nx run nativescript-shadow:build.all", "nx run nativescript-ox-button:build.all"],
-						"parallel": false
-					}
-				},
-				"focus": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx g @nativescript/plugin-tools:focus-packages"],
-						"parallel": false
-					}
-				}
-			}
-		},
-		"nativescript-highcharts": {
-			"root": "packages/nativescript-highcharts",
-			"sourceRoot": "packages/nativescript-highcharts",
-			"projectType": "library",
-			"schematics": {},
-			"architect": {
-				"build": {
-					"builder": "@nrwl/node:package",
-					"options": {
-						"outputPath": "dist/packages/nativescript-highcharts",
-						"tsConfig": "packages/nativescript-highcharts/tsconfig.json",
-						"packageJson": "packages/nativescript-highcharts/package.json",
-						"main": "packages/nativescript-highcharts/index.ts",
-						"assets": [
-							"packages/nativescript-highcharts/*.md",
-							"packages/nativescript-highcharts/index.d.ts",
-							"packages/nativescript-highcharts/common.xml",
-							"LICENSE",
-							{
-								"glob": "**/*",
-								"input": "packages/nativescript-highcharts/platforms/",
-								"output": "./platforms/"
-							}
-						]
-					}
-				},
-				"build.all": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx run nativescript-highcharts:build", "node tools/scripts/build-finish.ts nativescript-highcharts"],
-						"parallel": false
-					}
-				},
-				"focus": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-highcharts"],
-						"parallel": false
-					}
-				}
-			}
-		},
-		"nativescript-google-login": {
-			"root": "packages/nativescript-google-login",
-			"sourceRoot": "packages/nativescript-google-login",
-			"projectType": "library",
-			"schematics": {},
-			"architect": {
-				"build": {
-					"builder": "@nrwl/node:package",
-					"options": {
-						"outputPath": "dist/packages/nativescript-google-login",
-						"tsConfig": "packages/nativescript-google-login/tsconfig.json",
-						"packageJson": "packages/nativescript-google-login/package.json",
-						"main": "packages/nativescript-google-login/index.d.ts",
-						"assets": [
-							"packages/nativescript-google-login/*.md",
-							"packages/nativescript-google-login/index.d.ts",
-							"LICENSE",
-							{
-								"glob": "**/*",
-								"input": "packages/nativescript-google-login/platforms/",
-								"output": "./platforms/"
-							},
+  "version": 1,
+  "projects": {
+    "demo-angular": {
+      "root": "apps/demo-angular/",
+      "sourceRoot": "apps/demo-angular/src",
+      "projectType": "application",
+      "prefix": "demo",
+      "architect": {
+        "ios": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "ns debug ios --no-hmr --emulator --env.testing"
+            ],
+            "cwd": "apps/demo-angular",
+            "parallel": false
+          }
+        },
+        "android": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "ns debug android --no-hmr --emulator --env.testing"
+            ],
+            "cwd": "apps/demo-angular",
+            "parallel": false
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "ns clean",
+              "npm i"
+            ],
+            "cwd": "apps/demo-angular",
+            "parallel": false
+          }
+        }
+      }
+    },
+    "all": {
+      "root": "",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx run nativescript-highcharts:build.all",
+              "nx run nativescript-google-login:build.all",
+              "nx run nativescript-toast:build.all",
+              "nx run nativescript-shadow:build.all",
+              "nx run nativescript-ox-button:build.all"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages"
+            ],
+            "parallel": false
+          }
+        }
+      },
+      "sourceRoot": ""
+    },
+    "nativescript-highcharts": {
+      "root": "packages/nativescript-highcharts",
+      "sourceRoot": "packages/nativescript-highcharts",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/nativescript-highcharts",
+            "tsConfig": "packages/nativescript-highcharts/tsconfig.json",
+            "packageJson": "packages/nativescript-highcharts/package.json",
+            "main": "packages/nativescript-highcharts/index.ts",
+            "assets": [
+              "packages/nativescript-highcharts/*.md",
+              "packages/nativescript-highcharts/index.d.ts",
+              "packages/nativescript-highcharts/common.xml",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/nativescript-highcharts/platforms/",
+                "output": "./platforms/"
+              }
+            ]
+          }
+        },
+        "build.all": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx run nativescript-highcharts:build",
+              "node tools/scripts/build-finish.ts nativescript-highcharts"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages nativescript-highcharts"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "nativescript-google-login": {
+      "root": "packages/nativescript-google-login",
+      "sourceRoot": "packages/nativescript-google-login",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/nativescript-google-login",
+            "tsConfig": "packages/nativescript-google-login/tsconfig.json",
+            "packageJson": "packages/nativescript-google-login/package.json",
+            "main": "packages/nativescript-google-login/index.d.ts",
+            "assets": [
+              "packages/nativescript-google-login/*.md",
+              "packages/nativescript-google-login/index.d.ts",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/nativescript-google-login/platforms/",
+                "output": "./platforms/"
+              },
               {
                 "glob": "**/*",
                 "input": "packages/nativescript-google-login/typings/",
                 "output": "./typings/"
               }
-						]
-					}
-				},
-				"build.all": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx run nativescript-google-login:build", "node tools/scripts/build-finish.ts nativescript-google-login"],
-						"parallel": false
-					}
-				},
-				"focus": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-google-login"],
-						"parallel": false
-					}
-				}
-			}
-		},
-		"nativescript-toast": {
-			"root": "packages/nativescript-toast",
-			"sourceRoot": "packages/nativescript-toast",
-			"projectType": "library",
-			"schematics": {},
-			"architect": {
-				"build": {
-					"builder": "@nrwl/node:package",
-					"options": {
-						"outputPath": "dist/packages/nativescript-toast",
-						"tsConfig": "packages/nativescript-toast/tsconfig.json",
-						"packageJson": "packages/nativescript-toast/package.json",
-						"main": "packages/nativescript-toast/index.d.ts",
-						"typings": "packages/nativescript-toast/index.d.ts",
-						"assets": [
-							"packages/nativescript-toast/*.md",
-							"packages/nativescript-toast/index.d.ts",
-							"packages/nativescript-toast/common.xml",
-							"LICENSE",
-							{
-								"glob": "**/*",
-								"input": "packages/nativescript-toast/platforms/",
-								"output": "./platforms/"
-							},
+            ]
+          }
+        },
+        "build.all": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx run nativescript-google-login:build",
+              "node tools/scripts/build-finish.ts nativescript-google-login"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages nativescript-google-login"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "nativescript-toast": {
+      "root": "packages/nativescript-toast",
+      "sourceRoot": "packages/nativescript-toast",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/nativescript-toast",
+            "tsConfig": "packages/nativescript-toast/tsconfig.json",
+            "packageJson": "packages/nativescript-toast/package.json",
+            "main": "packages/nativescript-toast/index.d.ts",
+            "typings": "packages/nativescript-toast/index.d.ts",
+            "assets": [
+              "packages/nativescript-toast/*.md",
+              "packages/nativescript-toast/index.d.ts",
+              "packages/nativescript-toast/common.xml",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/nativescript-toast/platforms/",
+                "output": "./platforms/"
+              },
               {
                 "glob": "**/*",
                 "input": "packages/nativescript-google-login/typings/",
                 "output": "./typings/"
               }
-						]
-					}
-				},
-				"build.all": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx run nativescript-toast:build", "node tools/scripts/build-finish.ts nativescript-toast"],
-						"parallel": false
-					}
-				},
-				"focus": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-toast"],
-						"parallel": false
-					}
-				}
-			}
-		},
-		"nativescript-shadow": {
-			"root": "packages/nativescript-shadow",
-			"sourceRoot": "packages/nativescript-shadow",
-			"projectType": "library",
-			"schematics": {},
-			"architect": {
-				"build": {
-					"builder": "@nrwl/node:package",
-					"options": {
-						"outputPath": "dist/packages/nativescript-shadow",
-						"tsConfig": "packages/nativescript-shadow/tsconfig.json",
-						"packageJson": "packages/nativescript-shadow/package.json",
-						"main": "packages/nativescript-shadow/index.ts",
-						"assets": [
-							"packages/nativescript-shadow/*.md",
-							"packages/nativescript-shadow/index.d.ts",
-							"LICENSE",
-							{
-								"glob": "**/*",
-								"input": "packages/nativescript-shadow/platforms/",
-								"output": "./platforms/"
-							}
-						]
-					}
-				},
-				"build.all": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx run nativescript-shadow:build", "node tools/scripts/build-finish.ts nativescript-shadow"],
-						"parallel": false
-					}
-				},
-				"focus": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-shadow"],
-						"parallel": false
-					}
-				}
-			}
-		},
-		"nativescript-ox-button": {
-			"root": "packages/nativescript-ox-button",
-			"sourceRoot": "packages/nativescript-ox-button",
-			"projectType": "library",
-			"schematics": {},
-			"architect": {
-				"build": {
-					"builder": "@nrwl/node:package",
-					"options": {
-						"outputPath": "dist/packages/nativescript-ox-button",
-						"tsConfig": "packages/nativescript-ox-button/tsconfig.json",
-						"packageJson": "packages/nativescript-ox-button/package.json",
-						"main": "packages/nativescript-ox-button/index.d.ts",
-						"assets": [
-							"packages/nativescript-ox-button/*.md",
-							"packages/nativescript-ox-button/index.d.ts",
-							"LICENSE",
-							{
-								"glob": "**/*",
-								"input": "packages/nativescript-ox-button/platforms/",
-								"output": "./platforms/"
-							}
-						]
-					}
-				},
-				"build.all": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx run nativescript-ox-button:build", "node tools/scripts/build-finish.ts nativescript-ox-button"],
-						"parallel": false
-					}
-				},
-				"focus": {
-					"builder": "@nrwl/workspace:run-commands",
-					"outputs": ["dist/packages"],
-					"options": {
-						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-ox-button"],
-						"parallel": false
-					}
-				}
-			}
-		}
-	},
-	"cli": {
-		"defaultCollection": "@nrwl/workspace"
-	}
+            ]
+          }
+        },
+        "build.all": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx run nativescript-toast:build",
+              "node tools/scripts/build-finish.ts nativescript-toast"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages nativescript-toast"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "nativescript-shadow": {
+      "root": "packages/nativescript-shadow",
+      "sourceRoot": "packages/nativescript-shadow",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/nativescript-shadow",
+            "tsConfig": "packages/nativescript-shadow/tsconfig.json",
+            "packageJson": "packages/nativescript-shadow/package.json",
+            "main": "packages/nativescript-shadow/index.ts",
+            "assets": [
+              "packages/nativescript-shadow/*.md",
+              "packages/nativescript-shadow/index.d.ts",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/nativescript-shadow/platforms/",
+                "output": "./platforms/"
+              }
+            ]
+          }
+        },
+        "build.all": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx run nativescript-shadow:build",
+              "node tools/scripts/build-finish.ts nativescript-shadow"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages nativescript-shadow"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    },
+    "nativescript-ox-button": {
+      "root": "packages/nativescript-ox-button",
+      "sourceRoot": "packages/nativescript-ox-button",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/packages/nativescript-ox-button",
+            "tsConfig": "packages/nativescript-ox-button/tsconfig.json",
+            "packageJson": "packages/nativescript-ox-button/package.json",
+            "main": "packages/nativescript-ox-button/index.d.ts",
+            "assets": [
+              "packages/nativescript-ox-button/*.md",
+              "packages/nativescript-ox-button/index.d.ts",
+              "LICENSE",
+              {
+                "glob": "**/*",
+                "input": "packages/nativescript-ox-button/platforms/",
+                "output": "./platforms/"
+              }
+            ]
+          }
+        },
+        "build.all": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx run nativescript-ox-button:build",
+              "node tools/scripts/build-finish.ts nativescript-ox-button"
+            ],
+            "parallel": false
+          }
+        },
+        "focus": {
+          "builder": "@nrwl/workspace:run-commands",
+          "outputs": [
+            "dist/packages"
+          ],
+          "options": {
+            "commands": [
+              "nx g @nativescript/plugin-tools:focus-packages nativescript-ox-button"
+            ],
+            "parallel": false
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  }
 }
