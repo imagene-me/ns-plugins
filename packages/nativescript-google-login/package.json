@@ -4,6 +4,12 @@
 	"description": "Add Google SignIn to your Nativescript Application. This plugin provides an AuthCode for server-side authentication",
 	"main": "index",
 	"typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "8.0.0",
+      "android": "8.0.0"
+    }
+  },
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/NativeScript/plugins.git"
