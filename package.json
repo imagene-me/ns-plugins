@@ -29,8 +29,6 @@
     "@nativescript/theme": "~3.0.1",
     "@nativescript/types": "~8.1.1",
     "@nativescript/webpack": "~5.0.0",
-    "@nativescript/android": "8.1.1",
-    "@nativescript/ios": "8.1.0",
     "@ngtools/webpack": "~13.1.1",
     "@nrwl/cli": "13.7.2",
     "@nrwl/cypress": "13.7.2",
