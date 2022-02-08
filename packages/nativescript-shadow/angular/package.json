@@ -2,15 +2,7 @@
 	"name": "nativescript-shadow-angular",
 	"ngPackage": {
 		"lib": {
-			"entryFile": "index.ts",
-			"umdModuleIds": {
-				"@nativescript/core": "ns-core",
-				"@nativescript/angular": "ns-angular",
-				"@imagene.me/nativescript-shadow": "ns-nativescript-shadow"
-			}
-		},
-		"whitelistedNonPeerDependencies": [
-			"."
-		]
+			"entryFile": "index.ts"
+		}
 	}
 }

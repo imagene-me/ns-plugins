@@ -1,4 +1,4 @@
-import { Color, Length } from '@nativescript/core';
+import { Color, CoreTypes } from '@nativescript/core';
 
 import { ToastDuration } from '../enums/toast-duration';
 import { ToastVariant } from '../enums/toast-variant';
@@ -45,11 +45,11 @@ export interface ToastOptions {
   /**
    *  Y Position
    */
-  yAxisOffset?: Length | number;
+  yAxisOffset?: CoreTypes.LengthType | number;
   /**
    *  X Position
    */
-  xAxisOffset?: Length | number;
+  xAxisOffset?: CoreTypes.LengthType | number;
 
   /**
    *  Tap toast to dismiss

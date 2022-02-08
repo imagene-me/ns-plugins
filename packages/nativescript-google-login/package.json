@@ -1,35 +1,35 @@
 {
-	"name": "@imagene.me/nativescript-google-login",
-	"version": "1.2.0",
-	"description": "Add Google SignIn to your Nativescript Application. This plugin provides an AuthCode for server-side authentication",
-	"main": "index",
-	"typings": "index.d.ts",
-	"nativescript": {
-		"platforms": {
-			"android": "7.0.0",
-			"ios": "6.0.1"
-		}
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/NativeScript/plugins.git"
-	},
-	"keywords": [
-		"NativeScript",
-		"JavaScript",
-		"TypeScript",
-		"iOS",
-		"Android"
-	],
-	"author": {
-		"name": "NativeScript",
-		"email": "oss@nativescript.org"
-	},
-	"bugs": {
-		"url": "https://github.com/NativeScript/plugins/issues"
-	},
-	"license": "Apache-2.0",
-	"homepage": "https://github.com/NativeScript/plugins",
-	"readmeFilename": "README.md",
-	"bootstrapper": "@nativescript/plugin-seed"
+  "name": "@imagene.me/nativescript-google-login",
+  "version": "2.0.0",
+  "description": "Add Google SignIn to your Nativescript Application. This plugin provides an AuthCode for server-side authentication",
+  "main": "index",
+  "typings": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "8.1.0",
+      "android": "8.1.1"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NativeScript/plugins.git"
+  },
+  "keywords": [
+    "NativeScript",
+    "JavaScript",
+    "TypeScript",
+    "iOS",
+    "Android"
+  ],
+  "author": {
+    "name": "NativeScript",
+    "email": "oss@nativescript.org"
+  },
+  "bugs": {
+    "url": "https://github.com/NativeScript/plugins/issues"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/NativeScript/plugins",
+  "readmeFilename": "README.md",
+  "bootstrapper": "@nativescript/plugin-seed"
 }

@@ -8,6 +8,7 @@ import { HighchartsDirective } from './highcharts.directive';
 	exports: [HighchartsDirective],
 })
 export class HighchartsModule {}
+export { HighchartsDirective } from './highcharts.directive';
 
 // Uncomment this line if the package provides a custom view component
 registerElement('Highcharts', () => Highcharts);

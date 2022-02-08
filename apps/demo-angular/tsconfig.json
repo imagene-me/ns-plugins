@@ -1,13 +1,15 @@
 {
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
-		"rootDirs": [".", "../.."],
-		"baseUrl": ".",
-		"paths": {
-			"~/*": ["src/*"],
-			"@demo/shared": ["../../tools/demo/index.ts"],
-			"@imagene.me/*": ["../../dist/packages/*"]
-		}
+    "rootDirs": [".", "../.."],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+      "@demo/shared": ["../../tools/demo/index.ts"],
+      "@imagene.me/*": ["../../dist/packages/*"]
+    }
 	},
-	"files": ["./references.d.ts", "./src/main.ts"]
+  "include": ["./src/**/*.ios.ts", "./src/**/*.android.ts"],
+	"files": ["./references.d.ts", "./src/main.ts", "./src/polyfills.ts"],
+  "exclude": ["platforms"]
 }

@@ -6,5 +6,6 @@
 		"paths": {
 			"@imagene.me/nativescript-highcharts": ["../../../dist/packages/nativescript-highcharts"]
 		}
-	}
+	},
+  "files": []
 }

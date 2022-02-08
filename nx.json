@@ -11,36 +11,22 @@
 		},
 		"tsconfig.base.json": "*",
 		"tslint.json": "*",
-		"nx.json": "*"
-	},
-	"projects": {
-		"demo": {
-			"tags": []
-		},
-		"demo-angular": {
-			"tags": []
-		},
-		"all": {
-			"tags": []
-		},
-		"nativescript-highcharts": {
-			"tags": []
-		},
-		"nativescript-google-login": {
-			"tags": []
-		},
-		"nativescript-toast": {
-			"tags": []
-		},
-		"nativescript-shadow": {
-			"tags": []
-		},
-		"nativescript-ox-button": {
-			"tags": []
-		}
+		"nx.json": "*",
+		".eslintrc.json": "*"
 	},
 	"workspaceLayout": {
 		"appsDir": "apps",
 		"libsDir": "packages"
+	},
+	"cli": {
+		"defaultCollection": "@nrwl/workspace"
+	},
+	"targetDependencies": {
+		"build": [
+			{
+				"target": "build",
+				"projects": "dependencies"
+			}
+		]
 	}
 }
