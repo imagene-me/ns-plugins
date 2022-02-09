@@ -2,7 +2,11 @@
 	"name": "nativescript-highcharts-angular",
 	"ngPackage": {
 		"lib": {
-			"entryFile": "index.ts"
+			"entryFile": "index.ts",
+      "umdModuleIds": {
+        "@nativescript/angular": "ns-angular",
+        "@imagene.me/nativescript-highcharts": "ns-nativescript-highcharts"
+      }
 		}
 	}
 }
