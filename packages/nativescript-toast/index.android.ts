@@ -22,16 +22,21 @@ export class Toasty {
 		// create the android Toast
 		this._toast = android.widget.Toast.makeText(Utils.android.getApplicationContext(), this._text, android.widget.Toast.LENGTH_SHORT);
 
-		const ref = new WeakRef<Toasty>(this);
-		this._toast.getView().setOnTouchListener(
-			new android.view.View.OnTouchListener({
-				onTouch(param0: android.view.View, param1: android.view.MotionEvent): boolean {
-					ref.get()?._toast?.cancel();
-
-					return false;
-				},
-			})
-		);
+    /*
+      This method was deprecated in API level 30. Custom toast views are deprecated.
+      Apps can create a standard text toast with the makeText(android.content.Context, java.lang.CharSequence, int) method, or use a Snackbar when in the foreground.
+      Starting from Android Build.VERSION_CODES#R, apps targeting API level Build.VERSION_CODES#R or higher that are in the background will not have custom toast views displayed.
+    */
+		// const ref = new WeakRef<Toasty>(this);
+		// this._toast.getView().setOnTouchListener(
+		// 	new android.view.View.OnTouchListener({
+		// 		onTouch(param0: android.view.View, param1: android.view.MotionEvent): boolean {
+		// 			ref.get()?._toast?.cancel();
+    //
+		// 			return false;
+		// 		},
+		// 	})
+		// );
 
 		// set the values
 		this.setToastDuration(this._duration).setVariant(this._variant, this._customVariantParams).setToastPosition().setTextPosition();
