@@ -1,14 +1,13 @@
-import { NgModule } from '@angular/core';
-import { registerElement } from '@nativescript/angular';
+import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { Highcharts } from '@imagene.me/nativescript-highcharts';
-import { HighchartsDirective } from './highcharts.directive';
+import { registerElement } from '@nativescript/angular';
 
 @NgModule({
-	declarations: [HighchartsDirective],
-	exports: [HighchartsDirective],
+  declarations: [],
+  exports: [],
+  schemas: [NO_ERRORS_SCHEMA],
 })
 export class HighchartsModule {}
-export { HighchartsDirective } from './highcharts.directive';
 
 // Uncomment this line if the package provides a custom view component
 registerElement('Highcharts', () => Highcharts);

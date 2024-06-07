@@ -37,10 +37,7 @@ export class Toasty {
     this.setVariant(opts?.variant, opts?.customVariantParams);
 
     // set the defaults for the toasty, if passed in constructor those values are used
-    this.setToastDuration(this._duration)
-      .setToastPosition(this._position)
-      .setTextColor(this._textColor)
-      .setBackgroundColor(this._backgroundColor);
+    this.setToastDuration(this._duration).setToastPosition(this._position).setTextColor(this._textColor).setBackgroundColor(this._backgroundColor);
 
     // check ios configuration
     // if displaying shadow also check if user wants to change default shadow color
@@ -48,12 +45,9 @@ export class Toasty {
       this._toastStyle.displayShadow = this._iOSOpts.displayShadow;
       if (this._iOSOpts.shadowColor) {
         if (typeof this._iOSOpts.shadowColor === 'string') {
-          this._toastStyle.shadowColor = new Color(
-            this._iOSOpts.shadowColor
-          ).ios;
+          this._toastStyle.shadowColor = new Color(this._iOSOpts.shadowColor).ios;
         } else {
-          this._toastStyle.shadowColor =
-            (this._iOSOpts?.shadowColor as any)?.ios ?? new Color('black').ios;
+          this._toastStyle.shadowColor = (this._iOSOpts?.shadowColor as any)?.ios ?? new Color('black').ios;
         }
       }
     }
@@ -122,13 +116,13 @@ export class Toasty {
     this._updateToastPosition();
   }
 
+  get xAxisOffset(): CoreTypes.LengthType | number {
+    return this._x;
+  }
+
   set yAxisOffset(value: CoreTypes.LengthType | number) {
     this._y = value;
     this._updateToastPosition();
-  }
-
-  get xAxisOffset(): CoreTypes.LengthType | number {
-    return this._x;
   }
 
   get yAxisOffset(): CoreTypes.LengthType | number {
@@ -136,11 +130,7 @@ export class Toasty {
   }
 
   private static isLength(value) {
-    return (
-      value &&
-      !Utils.isNullOrUndefined(value.unit) &&
-      !Utils.isNullOrUndefined(value.value)
-    );
+    return value && !Utils.isNullOrUndefined(value.unit) && !Utils.isNullOrUndefined(value.value);
   }
 
   private get yPixels(): number | undefined {
@@ -211,14 +201,14 @@ export class Toasty {
       case ToastPosition.CENTER_RIGHT:
         symbol = '+';
         break;
-      default:
-        const value = `${offset}`;
-        if (value.includes('-')) {
+      default: {
+        if (`${offset}`.includes('-')) {
           symbol = '';
         } else {
           symbol = '-';
         }
         break;
+      }
     }
     const result = Number(`${symbol}${offset}`);
     return Number.isNaN(result) ? undefined : result;
@@ -228,13 +218,7 @@ export class Toasty {
     if (!this._text) {
       throw new Error('Text is not set');
     } else {
-      this._getView()?.makeToastWithOffset(
-        this._text,
-        CGPointMake(
-          this.getOffset(this.xPixels) ?? 0,
-          this.getOffset(this.yPixels) ?? 0
-        )
-      );
+      this._getView()?.makeToastWithOffset(this._text, CGPointMake(this.getOffset(this.xPixels) ?? 0, this.getOffset(this.yPixels) ?? 0));
     }
   }
 
@@ -379,9 +363,7 @@ export class Toasty {
     return this.findTopViewController(root);
   }
 
-  private findTopViewController(
-    root: UIViewController
-  ): UIViewController | undefined {
+  private findTopViewController(root: UIViewController): UIViewController | undefined {
     const presented = root.presentedViewController;
     if (presented != null) {
       return this.findTopViewController(presented);

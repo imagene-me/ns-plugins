@@ -3,10 +3,16 @@
   "version": "2.0.2",
   "description": "This plugins allows you to use Highcharts in NativeScript.",
   "main": "index",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
+  "nativescript": {
+    "platforms": {
+      "ios": "6.0.0",
+      "android": "6.0.0"
+    }
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/imagene-me/ns-plugins.git"
+    "url": "https://github.com/NativeScript/plugins.git"
   },
   "keywords": [
     "NativeScript",
@@ -16,14 +22,14 @@
     "Android"
   ],
   "author": {
-    "name": "Mahamat Guihini",
-    "email": "mhtghn@gmail.com"
+    "name": "IMAGENE.ME",
+    "email": "oss@imagene.me"
   },
   "bugs": {
-    "url": "https://github.com/mhtghn/ns-plugins/issues"
+    "url": "https://github.com/NativeScript/plugins/issues"
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/mhtghn/ns-plugins",
+  "homepage": "https://github.com/NativeScript/plugins",
   "readmeFilename": "README.md",
   "bootstrapper": "@nativescript/plugin-seed"
 }

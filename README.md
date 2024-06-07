@@ -1,9 +1,6 @@
-- @imagene.me/nativescript-google-login
-- @imagene.me/nativescript-highcharts
-- @imagene.me/nativescript-ngx-shadow
-- @imagene.me/nativescript-ox-button
-- @imagene.me/nativescript-shadow
-- @imagene.me/nativescript-toast
+- [@imagene.me/nativescript-highcharts](packages/nativescript-highcharts/README.md)
+- [@imagene.me/nativescript-ox-button](packages/nativescript-ox-button/README.md)
+- [@imagene.me/nativescript-toast](packages/nativescript-toast/README.md)
 
 # How to use?
 
@@ -54,7 +51,5 @@ npm run publish-packages
 - You will be prompted for the package names to publish. Leaving blank and hitting enter will publish them all.
 - You will then be prompted for the version to use. Leaving blank will auto bump the patch version (it also handles prerelease types like alpha, beta, rc, etc. - It even auto tags the corresponding prelease type on npm).
 - You will then be given a brief sanity check 🧠😊
-
-Note: You have to be logged in to npm in console before publish package (confluence)
 
 <h3 align="center">Made with ❤️</h3>

@@ -3,32 +3,30 @@ import { Toasty } from '@imagene.me/nativescript-toast';
 
 @Component({
   selector: 'demo-nativescript-toast',
-  templateUrl: 'nativescript-toast.component.html'
+  templateUrl: 'nativescript-toast.component.html',
 })
 export class NativescriptToastComponent {
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   shortToast(): void {
     new Toasty({
-      text: 'Default short toast'
+      text: 'Default short toast',
     }).show();
   }
 
   longToast() {
     new Toasty({
-      text: 'Default long toast',
-      duration: ToastDuration.Long
+      text: 'Default long toast... Lorem ipsum dolor sit amet, consectetur adip eum. Lorem ipsum dolor sit amet, con sectetur adip eum. Lorem ipsum dolor sit am',
+      duration: ToastDuration.Long,
     }).show();
   }
 
   errorToast() {
     new Toasty({
       text: 'Default error toast',
-      variant: ToastVariant.Error
+      variant: ToastVariant.Error,
     }).show();
   }
 
@@ -37,8 +35,8 @@ export class NativescriptToastComponent {
       text: 'Custom toast',
       customVariantParams: {
         backgroundColor: '#ccc123',
-        textColor: '#aa22ff'
-      }
+        textColor: '#aa22ff',
+      },
     }).show();
   }
 }
@@ -50,5 +48,5 @@ export enum ToastVariant {
 
 export enum ToastDuration {
   'Short' = 'short',
-  'Long' = 'long'
+  'Long' = 'long',
 }

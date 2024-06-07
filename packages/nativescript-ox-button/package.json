@@ -3,7 +3,7 @@
   "version": "2.0.1",
   "description": "IOS Custom Button Plugin",
   "main": "index",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "nativescript": {
     "platforms": {
       "ios": "6.0.0",
@@ -22,8 +22,8 @@
     "Android"
   ],
   "author": {
-    "name": "NativeScript",
-    "email": "oss@nativescript.org"
+    "name": "IMAGENE.ME",
+    "email": "oss@imagene.me"
   },
   "bugs": {
     "url": "https://github.com/NativeScript/plugins/issues"

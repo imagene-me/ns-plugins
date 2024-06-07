@@ -1,6 +1,7 @@
 declare class ToastManager extends NSObject {
   static alloc(): ToastManager; // inherited from NSObject
 
+  // eslint-disable-next-line @typescript-eslint/no-misused-new
   static new(): ToastManager; // inherited from NSObject
 
   duration: number;
@@ -33,12 +34,13 @@ declare const enum ToastPosition {
 
   BottomLeft = 7,
 
-  BottomRight = 8
+  BottomRight = 8,
 }
 
 declare class ToastStyle extends NSObject {
   static alloc(): ToastStyle; // inherited from NSObject
 
+  // eslint-disable-next-line @typescript-eslint/no-misused-new
   static new(): ToastStyle; // inherited from NSObject
 
   activityBackgroundColor: UIColor;
@@ -90,6 +92,8 @@ declare class ToastStyle extends NSObject {
   verticalPadding: number;
 }
 
+// eslint-disable-next-line no-var
 declare var Toast_SwiftVersionNumber: number;
 
+// eslint-disable-next-line no-var
 declare var Toast_SwiftVersionString: interop.Reference<number>;

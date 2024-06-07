@@ -6,7 +6,7 @@ This plugins allows you to use Highcharts in NativeScript.
 ns plugin add @imagene.me/nativescript-highcharts
 ```
 
-**Info:** This plugin works with NativeScript 7.0.0 and above. For older versions of NativeScript check this [repo](https://github.com/mhtghn/nativescript-ui-highcharts)
+**Info:** This plugin works with NativeScript 8.7.0 and above. For older versions of NativeScript check this [repo](https://github.com/mhtghn/nativescript-ui-highcharts)
 
 ## Screenshots
 
@@ -134,18 +134,20 @@ export class HomeViewModel extends Observable {
 #### XML
 
 ```xml
-<Page class="page"
-    navigatingTo="onNavigatingTo"
-    xmlns="http://schemas.nativescript.org/tns.xsd"
-    xmlns:ui="@mhtghn/nativescript-highcharts">
+<Page
+  class="page"
+  navigatingTo="onNavigatingTo"
+  xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:ui="@mhtghn/nativescript-highcharts"
+>
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Home"></Label>
+        <Label class="action-bar-title" text="Home" />
     </ActionBar>
 
     <GridLayout>
         <!-- Add your page content here -->
-        <ui:Highcharts options="{{chartOptionsString}}"></ui:Highcharts>
+        <ui:Highcharts options="{{chartOptionsString}}" />
     </GridLayout>
 </Page>
 ```
@@ -273,7 +275,7 @@ export class HomeComponent implements OnInit {
 - Add the next option to the chart options to disable the display of the Highcharts.com Hyperlink in the webview
   ```javascript
   credits: {
-  	enabled: false;
+    enabled: false;
   }
   ```
 

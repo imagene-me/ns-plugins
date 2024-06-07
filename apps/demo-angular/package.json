@@ -1,31 +1,13 @@
 {
-  "main": "src/main.ts",
+  "main": "./src/main.ts",
   "dependencies": {
-    "@angular/animations": "file:../../node_modules/@angular/animations",
-    "@angular/common": "file:../../node_modules/@angular/common",
-    "@angular/compiler": "file:../../node_modules/@angular/compiler",
-    "@angular/core": "file:../../node_modules/@angular/core",
-    "@angular/forms": "file:../../node_modules/@angular/forms",
-    "@angular/platform-browser": "file:../../node_modules/@angular/platform-browser",
-    "@angular/platform-browser-dynamic": "file:../../node_modules/@angular/platform-browser-dynamic",
-    "@angular/router": "file:../../node_modules/@angular/router",
-    "@imagene.me/nativescript-google-login": "file:../../dist/packages/nativescript-google-login",
+    "@nativescript/core": "file:../../node_modules/@nativescript/core",
     "@imagene.me/nativescript-highcharts": "file:../../dist/packages/nativescript-highcharts",
     "@imagene.me/nativescript-ox-button": "file:../../dist/packages/nativescript-ox-button",
-    "@imagene.me/nativescript-shadow": "file:../../dist/packages/nativescript-shadow",
-    "@imagene.me/nativescript-toast": "file:../../dist/packages/nativescript-toast",
-    "@nativescript/angular": "file:../../node_modules/@nativescript/angular",
-    "@nativescript/core": "file:../../node_modules/@nativescript/core",
-    "@nativescript/theme": "file:../../node_modules/@nativescript/theme",
-    "rxjs": "file:../../node_modules/rxjs",
-    "zone.js": "file:../../node_modules/zone.js"
+    "@imagene.me/nativescript-toast": "file:../../dist/packages/nativescript-toast"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",
-    "@nativescript/android": "8.1.1",
-    "@nativescript/ios": "8.1.0",
-    "@nativescript/webpack": "file:../../node_modules/@nativescript/webpack",
-    "@ngtools/webpack": "file:../../node_modules/@ngtools/webpack",
-    "typescript": "file:../../node_modules/typescript"
+    "@nativescript/android": "~8.7.0",
+    "@nativescript/ios": "~8.7.0"
   }
 }

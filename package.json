@@ -3,61 +3,47 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "setup": "npx rimraf node_modules package-lock.json dist tmp && npm i && ts-patch install",
+    "postinstall": "husky install && npx ts-patch install",
+    "setup": "npx rimraf node_modules package-lock.json dist tmp yarn.lock && npm i",
     "start": "nps",
     "add": "nx g @nativescript/plugin-tools:add-package",
     "add-angular": "nx g @nativescript/plugin-tools:add-angular",
     "config": "nx g @nativescript/plugin-tools:config",
-    "publish-packages": "nx g @nativescript/plugin-tools:publish"
+    "publish-packages": "nx g @nativescript/plugin-tools:publish",
+    "sync-packages-with-demos": "nx g @nativescript/plugin-tools:sync-packages-with-demos",
+    "remove-package": "nx g @nativescript/plugin-tools:remove-package",
+    "add-demo": "nx g @nativescript/plugin-tools:add-demo"
   },
   "private": true,
   "devDependencies": {
-    "@angular/animations": "12.2.13",
-    "@angular/cli": "13.0.3",
-    "@angular/common": "12.2.13",
-    "@angular/compiler": "12.2.13",
-    "@angular/core": "12.2.13",
-    "@angular/forms": "12.2.13",
-    "@angular/platform-browser": "12.2.13",
-    "@angular/platform-browser-dynamic": "12.2.13",
-    "@angular/router": "12.2.13",
-    "@angular-devkit/build-angular": "12.2.13",
-    "@angular/compiler-cli": "12.2.13",
-    "@nativescript/angular": "12.2.0",
-    "@nativescript/core": "~8.1.5",
-    "@nativescript/plugin-tools": "2.3.0",
-    "@nativescript/theme": "~3.0.1",
-    "@nativescript/types": "~8.1.1",
-    "@nativescript/webpack": "~5.0.0",
-    "@ngtools/webpack": "12.2.16",
-    "@nrwl/cli": "13.7.2",
-    "@nrwl/cypress": "13.7.2",
-    "@nrwl/eslint-plugin-nx": "13.7.2",
-    "@nrwl/jest": "13.7.2",
-    "@nrwl/linter": "13.7.2",
-    "@nrwl/node": "13.7.2",
-    "@nrwl/tao": "13.7.2",
-    "@nrwl/web": "13.7.2",
-    "@nrwl/workspace": "13.7.2",
-    "@types/jasmine": "~3.10.0",
-    "@types/node": "14.14.33",
-    "nativescript-ui-sidedrawer": "~10.0.1",
-    "nativescript-vue": "~2.8.0",
-    "nativescript-vue-template-compiler": "~2.8.0",
-    "ng-packagr": "12.2.7",
-    "rxjs": "6.6.7",
-    "tslib": "^2.0.0",
-    "typescript": "~4.3.0",
-    "zone.js": "~0.11.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "@angular-devkit/build-angular": "^17.0.0",
+    "@angular/animations": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/compiler": "^17.0.0",
+    "@angular/compiler-cli": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/platform-browser-dynamic": "^17.0.0",
+    "@angular/router": "^17.0.0",
+    "@nativescript/angular": "^17.0.0",
+    "@nativescript/core": "~8.7.0",
+    "@nativescript/plugin-tools": "5.2.5",
+    "@nativescript/types": "~8.7.0",
+    "@nativescript/webpack": "~5.0.5",
+    "@ngtools/webpack": "^17.0.0",
+    "husky": "~9.0.0",
+    "nativescript": "^8.7.2",
+    "nativescript-vue": "~2.9.0",
+    "nativescript-vue-template-compiler": "~2.9.0",
+    "ng-packagr": "^17.0.0",
+    "rxjs": "~7.8.0",
+    "typescript": "~5.4.0",
+    "zone.js": "~0.14.0"
   },
   "lint-staged": {
-    "**/*": [
-      "nx format:write --files"
+    "**/*.{js,ts,scss,json,html}": [
+      "npx prettier --write"
     ]
   }
 }

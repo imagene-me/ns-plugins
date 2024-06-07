@@ -3,33 +3,33 @@
   "version": "2.0.2",
   "description": "Imagene.me NativeScript toast plugin",
   "main": "index",
-  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "nativescript": {
     "platforms": {
-      "ios": "8.1.0",
-      "android": "8.1.1"
+      "ios": "6.0.0",
+      "android": "6.0.0"
     }
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/imagene-me/ns-plugins"
+    "url": "https://github.com/NativeScript/plugins.git"
   },
   "keywords": [
     "NativeScript",
     "JavaScript",
-    "Android",
+    "TypeScript",
     "iOS",
-    "toast"
+    "Android"
   ],
   "author": {
-    "name": "Imagene.me",
-    "email": "github@imagene.me"
+    "name": "IMAGENE.ME",
+    "email": "oss@imagene.me"
   },
   "bugs": {
-    "url": "https://github.com/imagene-me/ns-plugins/issues"
+    "url": "https://github.com/NativeScript/plugins/issues"
   },
   "license": "MIT",
-  "homepage": "https://github.com/imagene-me/ns-plugins",
+  "homepage": "https://github.com/NativeScript/plugins",
   "readmeFilename": "README.md",
   "bootstrapper": "@nativescript/plugin-seed"
 }

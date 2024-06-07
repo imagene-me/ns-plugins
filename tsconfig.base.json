@@ -1,28 +1,33 @@
 {
-	"compilerOptions": {
-		"rootDir": ".",
-		"sourceMap": true,
-		"declaration": true,
-		"moduleResolution": "node",
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"noEmitHelpers": true,
-		"target": "es2017",
-		"module": "esnext",
-		"lib": ["es2017", "dom"],
-		"skipLibCheck": true,
-		"skipDefaultLibCheck": true,
-		"baseUrl": ".",
-		"plugins": [
-			{
-				"transform": "@nativescript/webpack/transformers/ns-transform-native-classes",
-				"type": "raw"
-			}
-		],
-		"paths": {
-			"@demo/shared": ["tools/demo/index.ts"],
-			"@imagene.me/*": ["packages/*"]
-		}
-	},
-	"exclude": ["node_modules", "tmp"]
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ESNext", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "transform": "@nativescript/webpack/dist/transformers/NativeClass",
+        "type": "raw"
+      }
+    ],
+    "paths": {
+      "@demo/shared": ["tools/demo/index.ts"],
+      "@imagene.me/*": ["packages/*"],
+      "@imagene.me/nativescript-ox-button": ["packages/nativescript-ox-button/index.d.ts"],
+      "@imagene.me/nativescript-ox-button/angular": ["packages/nativescript-ox-button/angular/index.ts"],
+      "@imagene.me/nativescript-toast": ["packages/nativescript-toast/index.d.ts"],
+      "@imagene.me/nativescript-highcharts": ["packages/nativescript-highcharts/index.d.ts"],
+      "@imagene.me/nativescript-highcharts/angular": ["packages/nativescript-highcharts/angular/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
 }

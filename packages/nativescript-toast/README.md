@@ -11,14 +11,12 @@
 TypeScript
 
 ```js
-import { Toasty } from "@imagene-me/nativescript-toast"
+import { Toasty } from '@imagene-me/nativescript-toast';
 // Toasty accepts an object for customizing its behavior/appearance. The only REQUIRED value is `text` which is the message for the toast.
-const toast = new Toasty(
-    {
-        text: 'Toast message',
-        variant: ToastVariant.Success
-    }
-);
+const toast = new Toasty({
+  text: 'Toast message',
+  variant: ToastVariant.Success,
+});
 toast.show();
 
 // or you can set the properties of the Toasty instance

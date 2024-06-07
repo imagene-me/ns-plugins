@@ -1,7 +1,7 @@
 # @imagene.me/nativescript-ox-button
 
 ```javascript
-ns plugin add @imagene.me/nativescript-ox-button
+npm install @imagene.me/nativescript-ox-button
 ```
 
 ## Usage

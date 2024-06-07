@@ -3,12 +3,8 @@ import { NativeScriptCommonModule, NativeScriptRouterModule } from '@nativescrip
 import { NativescriptToastComponent } from './nativescript-toast.component';
 
 @NgModule({
-	imports: [
-		NativeScriptCommonModule,
-		NativeScriptRouterModule.forChild(
-			[{ path: '', component: NativescriptToastComponent }]
-		)],
-	declarations: [NativescriptToastComponent],
-	schemas: [NO_ERRORS_SCHEMA],
+	imports: [NativeScriptCommonModule, NativeScriptRouterModule.forChild([{ path: '', component: NativescriptToastComponent }])],
+  declarations: [NativescriptToastComponent],
+  schemas: [ NO_ERRORS_SCHEMA]
 })
 export class NativescriptToastModule {}

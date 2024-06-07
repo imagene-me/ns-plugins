@@ -1,22 +1,41 @@
 {
 	"root": true,
 	"ignorePatterns": ["**/*"],
-	"plugins": ["@nrwl/nx"],
+	"plugins": ["@nx"],
 	"overrides": [
 		{
 			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-			"parserOptions": {},
-			"rules": {}
+			"rules": {
+				"@nx/enforce-module-boundaries": [
+					"error",
+					{
+						"enforceBuildableLibDependency": true,
+						"allow": [],
+						"depConstraints": [
+							{
+								"sourceTag": "*",
+								"onlyDependOnLibsWithTags": ["*"]
+							}
+						]
+					}
+				]
+			}
 		},
 		{
 			"files": ["*.ts", "*.tsx"],
-			"extends": ["plugin:@nrwl/nx/typescript"],
+			"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier", "plugin:@nx/typescript"],
 			"rules": {}
 		},
 		{
 			"files": ["*.js", "*.jsx"],
-			"extends": ["plugin:@nrwl/nx/javascript"],
+			"extends": ["plugin:@nx/javascript"],
 			"rules": {}
+		},
+		{
+			"files": ["references.d.ts"],
+			"rules": {
+				"@typescript-eslint/triple-slash-reference": "off"
+			}
 		}
 	]
 }
