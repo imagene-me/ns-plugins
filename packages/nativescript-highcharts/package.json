@@ -1,6 +1,6 @@
 {
   "name": "@imagene.me/nativescript-highcharts",
-  "version": "2.0.2",
+  "version": "3.0.0-dev.20240611",
   "description": "This plugins allows you to use Highcharts in NativeScript.",
   "main": "index",
   "types": "index.d.ts",
