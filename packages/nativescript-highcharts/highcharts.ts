@@ -1,9 +1,59 @@
 import { Builder, FlexboxLayout, Property, View, WebView } from '@nativescript/core';
 
+export class Highcharts extends FlexboxLayout {
+	constructor() {
+		super();
+		const innerComponent = Builder.parse(`
+      <FlexboxLayout justifyContent="center" alignContent="center" style="width: 100%; height: 100%;">
+        <WebView loaded="{{onWebViewLoaded}}" tap="{{ onTap }}" id="highChartWebView" src="{{options}}"  height="100%" width="100%" opacity="0"></WebView>
+      </FlexboxLayout>
+    `) as View;
+		innerComponent.bindingContext = this;
+
+		this.addChild(innerComponent);
+	}
+
+	onTap(): void {
+		// to be implemented
+	}
+
+	onWebViewLoaded(webargs) {
+		const webview: WebView = <WebView>webargs.object;
+		webview.on(WebView.loadFinishedEvent, () => {
+			if (webview.android) {
+				const webSettings = webview.android.getSettings();
+				webSettings.setBuiltInZoomControls(false);
+				webSettings.setDisplayZoomControls(false);
+				webSettings.setRenderPriority(android.webkit.WebSettings.RenderPriority.HIGH);
+
+				webSettings.setAppCacheEnabled(true);
+				webSettings.setCacheMode(android.webkit.WebSettings.LOAD_DEFAULT);
+				webSettings.setAppCachePath(webview.android.getContext().getCacheDir().getAbsolutePath());
+
+				webview.android.setBackgroundColor(0x00000000);
+				webview.android.setLayerType(android.view.View.LAYER_TYPE_HARDWARE, null);
+				// webview.android.setLayerType(android.view.View.LAYER_TYPE_SOFTWARE, null);
+
+				webview.android.setWebViewClient(new android.webkit.WebViewClient());
+				webview.android.setWebChromeClient(new android.webkit.WebChromeClient());
+			} else {
+				webview.ios.scrollView.minimumZoomScale = 1.0;
+				webview.ios.scrollView.maximumZoomScale = 1.0;
+				webview.ios.scalesPageToFit = false;
+				webview.ios.scrollView.bounces = false;
+				webview.ios.backgroundColor = UIColor.clearColor;
+				webview.ios.opaque = false;
+			}
+
+			webview.opacity = 1;
+		});
+	}
+}
+
 export const optionsProperty = new Property<Highcharts, string>({
-  name: 'options',
-  valueConverter: (value) => {
-    return `
+	name: 'options',
+	valueConverter: (value) => {
+		return `
             <!DOCTYPE html>
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -893,47 +943,8 @@ v[l]="undefined"===typeof q[l]?null:q[l]})}var n=this,v={};f(a,this.options,v,0)
             }
             </script>
             </body></html>`;
-  },
-  defaultValue: '',
+	},
+	defaultValue: '',
+	affectsLayout: false,
 });
-
-export class Highcharts extends FlexboxLayout {
-  constructor() {
-    super();
-    const innerComponent = Builder.parse(`
-      <FlexboxLayout justifyContent="center" alignContent="center" style="width: 100%; height: 100%;">
-        <WebView loaded="{{onWebViewLoaded}}" tap="{{ onTap }}" id="highChartWebView" src="{{options}}" height="100%" width="100%" opacity="0"></WebView>
-      </FlexboxLayout>
-    `) as View;
-    innerComponent.bindingContext = this;
-
-    this.addChild(innerComponent);
-  }
-
-  onTap(): void {
-    // to be implemented
-  }
-
-  onWebViewLoaded(webargs) {
-    const webview: WebView = <WebView>webargs.object;
-    webview.on(WebView.loadFinishedEvent, () => {
-      if (webview.android) {
-        webview.android.getSettings().setBuiltInZoomControls(false);
-        webview.android.getSettings().setDisplayZoomControls(false);
-        webview.android.setBackgroundColor(0x00000000);
-        webview.android.setLayerType(android.view.View.LAYER_TYPE_SOFTWARE, null);
-      } else {
-        webview.ios.scrollView.minimumZoomScale = 1.0;
-        webview.ios.scrollView.maximumZoomScale = 1.0;
-        webview.ios.scalesPageToFit = false;
-        webview.ios.scrollView.bounces = false;
-        webview.ios.backgroundColor = UIColor.clearColor;
-        webview.ios.opaque = false;
-      }
-
-      webview.opacity = 1;
-    });
-  }
-}
-
 optionsProperty.register(Highcharts);
