@@ -2,6 +2,10 @@
 - [@imagene.me/nativescript-ox-button](packages/nativescript-ox-button/README.md)
 - [@imagene.me/nativescript-toast](packages/nativescript-toast/README.md)
 
+# Requirements
+
+Node: ^18.13.0 || ^20.9.0
+
 # How to use?
 
 This workspace manages the suite of plugins listed above.
